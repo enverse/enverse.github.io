@@ -1,0 +1,56 @@
+<nav class="navbar__desktop-menu">
+  <div class="navbar__content">
+    <img src="assets/logo.png" />
+    <div class="navbar__menu-items-container">
+      <a href="#about">About Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#blog">Blog</a>
+
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar__desktop-menu {
+    /* display: flex; */
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    /* padding-left: 188px; */
+  }
+
+  .navbar__content {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    padding-top: 47px;
+  }
+
+  .navbar__menu-items-container {
+    font-size: 1.2em;
+    font-weight: 700;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar__menu-items-container a {
+    padding: 10px;
+  }
+
+  .navbar__menu-items-container a:last-child {
+    border: 2px solid #fafffb;
+    border-radius: 8px;
+  }
+
+  img {
+    height: 2em;
+  }
+  a:link,
+  a:visited {
+    text-decoration: inherit;
+    color: inherit;
+  }
+</style>
