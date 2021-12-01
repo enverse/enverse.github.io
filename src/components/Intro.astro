@@ -1,25 +1,73 @@
-<section id="intro-section" class="intro__section-background">
-  <div class="content">
-    <h1>Eco-Conceived Software</h1>
+<section id="intro" class="intro-background">
+  <div class="intro__content">
+    <h1>Eco-Conceived Software for Impact</h1>
+    <div class="intro__client-logos-container">
+      <img src="assets/image/gitlab-logo.png" />
+      <img src="assets/image/spotify-logo.png" />
+    </div>
   </div>
+
+  <a href="#about" class="intro__scroll-icons-container">
+    scroll
+    <span class="material-icons-outlined"> mouse </span>
+    <span class="material-icons-outlined"> south </span>
+  </a>
 </section>
 
 <style>
-  .intro__section-background {
-    height: 100vh;
+  .intro-background {
     background-image: url("/assets/home-background.jpg");
     display: flex;
     align-items: center;
+    flex-direction: column;
   }
-  .content {
+  .intro__content {
     width: 80%;
     margin: auto;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  a:link,
+  a:visited {
+    text-decoration: inherit;
+  }
+
+  .intro__client-logos-container {
+    display: flex;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
   }
 
   h1 {
     font-size: 5.3125em;
     margin: 0;
-    width: 648px;
+    width: 619px;
     color: white;
+  }
+
+  section {
+    padding: 100px 0;
+  }
+
+  .intro__scroll-icons-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 3.5em;
+      width: 95%;
+    }
+
+    /* .intro__content {
+      justify-content: flex-start;
+    } */
   }
 </style>

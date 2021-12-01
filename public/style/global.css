@@ -360,6 +360,7 @@ END NORMALIZE
 html {
   font-size: 16px;
   color: #fff;
+  scroll-behavior: smooth;
 }
 :root {
   --font-mono: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
@@ -380,4 +381,27 @@ html {
   :root {
     --color-light: #1f2937;
   }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  scroll-behavior: smooth;
+}
+
+/* MATERIAL OVERRIDES */
+.mdl-js-layout {
+  scroll-behavior: smooth;
+}
+.mdl-layout__drawer-button {
+  left: auto;
+  right: 0;
 }

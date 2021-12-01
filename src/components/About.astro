@@ -1,5 +1,5 @@
-<section id="about-section" class="about-section__background">
-  <div class="about-section__content-container">
+<section id="about" class="about__background">
+  <div class="about__content-container">
     <h1>About Us</h1>
     <p>
       I'm baby craft beer +1 tacos, <b>ashion axe bicycle rights fixie</b>f
@@ -14,7 +14,7 @@
       santo brunch kombucha live-edge occupy microdosing bramps literally.
       Crucifix gentrify bicycle rights typewriter,
     </p>
-    <p class="about-section__content--green-text">
+    <p class="about__content--green-text">
       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed.
     </p>
     <p>
@@ -26,23 +26,36 @@
 </section>
 
 <style>
-  .about-section__background {
+  .about__background {
     background-color: var(--color-green-mint);
     display: flex;
     align-items: center;
     color: black;
     padding: 100px 0;
   }
-  .about-section__content-container {
+  .about__content-container {
     width: 40%;
     margin: auto;
     text-align: center;
   }
 
-  .about-section__content--green-text {
+  .about__content--green-text {
     font-size: 2.5em;
     color: var(--color-green-army);
     font-weight: bold;
     margin: 50px 0;
+  }
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 3.5em;
+      width: 95%;
+    }
+
+    .about__background {
+      padding: 50px 0;
+    }
+    .about__content-container {
+      width: 80%;
+    }
   }
 </style>

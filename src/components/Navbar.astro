@@ -1,26 +1,39 @@
-<nav class="navbar__desktop-menu">
-  <div class="navbar__content">
-    <img src="assets/logo.png" />
-    <div class="navbar__menu-items-container">
+<div class="navbar__desktop-menu">
+  <a href="#intro"><img src="assets/logo.png" /></a>
+</div>
+<header
+  class="navbar__desktop-menu mdl-layout__header mdl-layout__header--transparent"
+>
+  <div class="mdl-layout__header-row">
+    <!-- Add spacer, to align navigation to the right -->
+    <div class="mdl-layout-spacer"></div>
+    <!-- Navigation -->
+    <nav class="mdl-navigation">
       <a href="#about">About Us</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#blog">Blog</a>
-
       <a href="#contact">Contact</a>
-    </div>
+    </nav>
   </div>
-</nav>
+</header>
+<div class="mdl-layout__drawer">
+  <nav class="mdl-navigation">
+    <a href="#about">About Us</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
 
 <style>
   .navbar__desktop-menu {
-    /* display: flex; */
-    position: fixed;
+    position: absolute;
     background-color: transparent;
-    width: 100%;
-    /* padding-left: 188px; */
+    padding: 17px 33px;
   }
 
   .navbar__content {
+    position: absolute;
     display: flex;
     width: 80%;
     margin: auto;
@@ -52,5 +65,10 @@
   a:visited {
     text-decoration: inherit;
     color: inherit;
+  }
+
+  .mdl-layout__drawer-button {
+    left: auto;
+    right: 0;
   }
 </style>

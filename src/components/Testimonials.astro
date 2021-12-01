@@ -1,7 +1,11 @@
-<section id="testimonials-section">
-  <div class="testimonials-section__icons-row">
-    <div class="testimonials-section__icons-content-container">
-      <div class="testimonials-section__icons-content">
+---
+import Carrousel from "./Carrousel/index.jsx";
+---
+
+<section id="testimonials">
+  <div class="testimonials__icons-row">
+    <div class="testimonials__icons-content-container">
+      <div class="testimonials__icons-content">
         <i class="fas fa-leaf"></i>
         <h2>0% Carbone</h2>
         <p>
@@ -9,7 +13,7 @@
           hella
         </p>
       </div>
-      <div class="testimonials-section__icons-content">
+      <div class="testimonials__icons-content">
         <i class="far fa-smile"></i>
         <h2>Friendly</h2>
         <p>
@@ -17,7 +21,7 @@
           ethical
         </p>
       </div>
-      <div class="testimonials-section__icons-content">
+      <div class="testimonials__icons-content">
         <i class="fas fa-rocket"></i>
         <h2>Boost your business</h2>
         <p>
@@ -27,37 +31,38 @@
       </div>
     </div>
   </div>
-  <div class="testimonials-section__testimonials-row">
-    <div class="testimonials-section__testimonials-content">
+  <div class="testimonials__testimonials-row">
+    <div class="testimonials__testimonials-content">
       <h1>What They Say</h1>
+      <Carrousel client:visible />
     </div>
   </div>
 </section>
 
 <style>
-  .testimonials-section__icons-row {
+  .testimonials__icons-row {
     background-color: var(--color-green);
     padding: 100px 0px;
   }
 
-  .testimonials-section__icons-content-container {
+  .testimonials__icons-content-container {
     width: 80%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     color: white;
   }
-  .testimonials-section__icons-content {
+  .testimonials__icons-content {
     display: flex;
     flex-direction: column;
   }
 
-  .testimonials-section__testimonials-row {
-    height: 64vh;
+  .testimonials__testimonials-row {
     background-color: var(--color-green-mint);
+    min-height: 842px;
   }
-  .testimonials-section__testimonials-content {
-    padding-top: 85px;
+  .testimonials__testimonials-content {
+    padding: 85px 0;
     color: black;
     width: 80%;
     margin: auto;
@@ -69,5 +74,11 @@
 
   i {
     font-size: 3em;
+  }
+
+  @media (max-width: 480px) {
+    .testimonials__icons-content-container {
+      flex-direction: column;
+    }
   }
 </style>

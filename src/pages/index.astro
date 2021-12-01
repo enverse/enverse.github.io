@@ -1,4 +1,6 @@
 ---
+// Layout
+import BaseLayout from "../layouts/BaseLayout.astro";
 // Component Imports
 import Intro from "../components/Intro.astro";
 import Navbar from "../components/Navbar.astro";
@@ -19,39 +21,12 @@ const title: string = "Enverse Labs";
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
-
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
-    />
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="/style/global.css" />
-    <link rel="stylesheet" href="/style/home.css" />
-  </head>
-  <body>
-    <main>
-      <Navbar />
-      <Intro />
-      <About />
-      <Testimonials />
-      <Blog />
-      <Contact />
-      <Footer />
-    </main>
-  </body>
-</html>
+<BaseLayout>
+  <Navbar />
+  <Intro />
+  <About />
+  <Testimonials />
+  <Blog />
+  <Contact />
+  <Footer />
+</BaseLayout>

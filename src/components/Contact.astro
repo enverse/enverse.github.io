@@ -1,7 +1,7 @@
 <section id="contact" class="contact-section-background">
   <div class="contact__content">
-    <div class="row">
-      <h1 class="column">Contact Us</h1>
+    <div class="contact__container">
+      <h1>Contact Us</h1>
       <form action="">
         <div id="name">
           <div
@@ -73,20 +73,15 @@
     margin: auto;
   }
 
-  .row {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .column {
-    display: flex;
-    flex-direction: column;
-  }
-
   h1 {
     font-size: 5.3125em;
     margin: 0;
     width: 648px;
+  }
+
+  .contact__container {
+    display: flex;
+    flex-direction: row;
   }
 
   form {
@@ -115,5 +110,22 @@
   .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
   .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
     font-size: 1.2em;
+  }
+
+  @media (max-width: 480px) {
+    form {
+      width: 82%;
+      margin: auto;
+    }
+
+    .contact__container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4em;
+      width: initial;
+    }
   }
 </style>
