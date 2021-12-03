@@ -1,7 +1,13 @@
 <section id="contact" class="contact-section-background">
   <div class="contact__content">
     <div class="contact__container">
-      <h1>Contact Us</h1>
+      <div class="contact__title-container">
+        <h1>Contact Us</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore.
+        </p>
+      </div>
       <form action="">
         <div id="name">
           <div
@@ -64,7 +70,7 @@
 
 <style>
   .contact-section-background {
-    background-image: url("/assets/contact-background.jpg");
+    background-image: url("/assets/image/contact-background.jpg");
     padding: 100px 0px;
     color: black;
   }
@@ -77,11 +83,20 @@
     font-size: 5.3125em;
     margin: 0;
     width: 648px;
+    font-family: "Exodus Sans Bold";
   }
 
   .contact__container {
     display: flex;
     flex-direction: row;
+  }
+
+  .contact__title-container {
+    width: 50%;
+  }
+
+  .contact__title-container p {
+    width: 449px;
   }
 
   form {
@@ -95,11 +110,13 @@
   .mdl-textfield__input {
     border-bottom: 1px solid black;
     font-size: 1.5em;
+    font-family: "Exodus Sans";
   }
 
   .mdl-textfield__label {
     color: black;
     font-size: 1.2em;
+    font-family: "Exodus Sans";
   }
 
   .mdl-textfield {
@@ -110,6 +127,12 @@
   .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
   .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
     font-size: 1.2em;
+    color: var(--color-green-army);
+    font-family: "Exodus Sans Bold";
+  }
+
+  .mdl-textfield__label:after {
+    background-color: var(--color-green-army);
   }
 
   @media (max-width: 480px) {
@@ -124,8 +147,12 @@
     }
 
     h1 {
-      font-size: 4em;
-      width: initial;
+      font-size: 2.6em;
+      width: 300px;
+    }
+
+    .contact__title-container p {
+      width: 300px;
     }
   }
 </style>

@@ -17,10 +17,6 @@ export default function Carrousel() {
 
   return (
     <Fragment>
-      <div>
-        marfa hashtag leggings. Pabst hot <b>chicken kale</b> chips fanny pack
-        ethical.
-      </div>
       <div className="carousel-tetimonials__container-row">
         <div className="carousel-testimonials__referers-container">
           {referralData.map(({ referrer }, index) => (

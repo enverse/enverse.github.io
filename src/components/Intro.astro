@@ -1,9 +1,14 @@
+---
+import GitlabLogo from "/assets/image/gitlab-logo.png";
+import Spotify from "/assets/image/spotify-logo.png";
+---
+
 <section id="intro" class="intro-background">
   <div class="intro__content">
     <h1>Eco-Conceived Software for Impact</h1>
     <div class="intro__client-logos-container">
-      <img src="assets/image/gitlab-logo.png" />
-      <img src="assets/image/spotify-logo.png" />
+      <img src={GitlabLogo} />
+      <img src={Spotify} />
     </div>
   </div>
 
@@ -16,7 +21,7 @@
 
 <style>
   .intro-background {
-    background-image: url("/assets/home-background.jpg");
+    background-image: url("/assets/image/home-background.jpg");
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -48,6 +53,7 @@
     margin: 0;
     width: 619px;
     color: white;
+    font-family: "Exodus Sans Bold";
   }
 
   section {
