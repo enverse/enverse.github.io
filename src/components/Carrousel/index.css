@@ -32,6 +32,8 @@
 .carousel-testimonials__referral-container {
   width: 40%;
   font-family: "Exodus Sans";
+  font-size: 1.1em;
+  line-height: 1.5;
 }
 
 .carousel-testimonials__referral-container h2 {

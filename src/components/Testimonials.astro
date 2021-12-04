@@ -7,27 +7,18 @@ import Carrousel from "./Carrousel/index.tsx";
     <div class="testimonials__icons-content-container">
       <div class="testimonials__icons-content">
         <i class="fas fa-leaf"></i>
-        <h2>0% Carbone</h2>
-        <p>
-          Irony jean shorts biodiesel disrupt jianbing tumblr master cleanse
-          hella
-        </p>
+        <h2>0% Carbon-efficient</h2>
+        <p>We build carbon-efficient applications.</p>
       </div>
       <div class="testimonials__icons-content">
         <i class="far fa-smile"></i>
-        <h2>Friendly</h2>
-        <p>
-          marfa hashtag leggings. Pabst hot chicken kale chips fanny pack
-          ethical
-        </p>
+        <h2>Modern & Minimalistic</h2>
+        <p>The UX and Design is at the heart of our product</p>
       </div>
       <div class="testimonials__icons-content">
         <i class="fas fa-rocket"></i>
-        <h2>Boost your business</h2>
-        <p>
-          marfa hashtag leggings. Pabst hot chicken kale chips fanny pack
-          ethical.
-        </p>
+        <h2>Powerful</h2>
+        <p>Lightning fast, and powerful apps</p>
       </div>
     </div>
   </div>
@@ -35,8 +26,11 @@ import Carrousel from "./Carrousel/index.tsx";
     <div class="testimonials__testimonials-content">
       <h1>What They Say</h1>
       <div class="testimonials__testimonials-content-subtitle">
-        marfa hashtag leggings. Pabst hot <b>chicken kale</b> chips fanny pack
-        ethical.
+        Here's what our clients have to say about our
+        <span class="testimonials__referals-subtitle--bold"
+          >proven track record</span
+        >
+        as reliable and efficient developers
       </div>
       <Carrousel client:visible />
     </div>
@@ -61,6 +55,10 @@ import Carrousel from "./Carrousel/index.tsx";
     flex-direction: column;
   }
 
+  .testimonials__icons-content p {
+    font-size: 1.5em;
+  }
+
   .testimonials__testimonials-row {
     background-color: var(--color-green-mint);
     min-height: 842px;
@@ -74,8 +72,12 @@ import Carrousel from "./Carrousel/index.tsx";
 
   .testimonials__testimonials-content-subtitle {
     margin-top: 15px;
+    width: 30%;
   }
 
+  .testimonials__referals-subtitle--bold {
+    font-family: "Exodus Sans Bold";
+  }
   h2,
   h1 {
     font-family: "Exodus Sans Bold";

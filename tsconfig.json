@@ -1,3 +1,8 @@
 {
-  "moduleResolution": "node"
+  "moduleResolution": "node",
+  "compilerOptions": {
+    "jsx": "react",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment"
+  }
 }

@@ -1,4 +1,4 @@
-import { Fragment } from "preact";
+import { Fragment, h } from "preact";
 import { useState } from "preact/hooks";
 
 import referralData from "./referral-data";

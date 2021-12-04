@@ -1,69 +1,18 @@
+---
+import ContactForm from "./ContactForm/index.tsx";
+---
+
 <section id="contact" class="contact-section-background">
   <div class="contact__content">
     <div class="contact__container">
       <div class="contact__title-container">
         <h1>Contact Us</h1>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore.
+          Tell us about your product, your timeline, how you heard about us, and
+          where you're located. We can't wait to hear from you.
         </p>
       </div>
-      <form action="">
-        <div id="name">
-          <div
-            class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-          >
-            <input class="mdl-textfield__input" type="text" id="name" />
-            <label class="mdl-textfield__label" for="name">Nom</label>
-          </div>
-        </div>
-
-        <div id="contact">
-          <div id="email">
-            <div
-              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-            >
-              <input class="mdl-textfield__input" type="email" />
-              <label class="mdl-textfield__label" for="email">E-mail</label>
-              <span class="mdl-textfield__error">Enter a valid email!</span>
-            </div>
-          </div>
-        </div>
-        <div id="message">
-          <div id="message">
-            <div
-              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-            >
-              <textarea
-                class="mdl-textfield__input"
-                type="text"
-                id="referral"
-              ></textarea>
-
-              <label class="mdl-textfield__label" for="message">Message</label>
-            </div>
-          </div>
-        </div>
-        <div id="referral">
-          <div id="referral">
-            <div
-              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-            >
-              <input class="mdl-textfield__input" type="text" id="referral" />
-              <label class="mdl-textfield__label" for="email"
-                >How did you hear about us ?</label
-              >
-            </div>
-          </div>
-        </div>
-        <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-          type="submit"
-          name="submit"
-        >
-          Submit
-        </button>
-      </form>
+      <ContactForm client:visible />
     </div>
   </div>
 </section>
@@ -97,42 +46,7 @@
 
   .contact__title-container p {
     width: 449px;
-  }
-
-  form {
-    width: 50%;
-  }
-
-  .mdl-textfield {
-    width: 100%;
-  }
-
-  .mdl-textfield__input {
-    border-bottom: 1px solid black;
     font-size: 1.5em;
-    font-family: "Exodus Sans";
-  }
-
-  .mdl-textfield__label {
-    color: black;
-    font-size: 1.2em;
-    font-family: "Exodus Sans";
-  }
-
-  .mdl-textfield {
-    margin: 10px 0;
-  }
-
-  .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
-  .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
-  .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
-    font-size: 1.2em;
-    color: var(--color-green-army);
-    font-family: "Exodus Sans Bold";
-  }
-
-  .mdl-textfield__label:after {
-    background-color: var(--color-green-army);
   }
 
   @media (max-width: 480px) {
