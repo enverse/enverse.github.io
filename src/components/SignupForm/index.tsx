@@ -8,16 +8,12 @@ import "./index.css";
 type FormValues = {
   name?: string;
   email?: string;
-  message?: string;
-  referral?: string;
 };
 
 export default () => {
   const [formValues, setFormValues] = useState<FormValues>({
     name: "",
     email: "",
-    message: "",
-    referral: "",
   });
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -42,7 +38,7 @@ export default () => {
 
       setLoading(true);
       try {
-        const response = await fetch("https://formspree.io/f/xrgjzwoq", {
+        const response = await fetch("mailchimpApi", {
           method: "POST",
           body: JSON.stringify(formValues),
           headers: {
@@ -53,11 +49,10 @@ export default () => {
           setFormValues({
             name: "",
             email: "",
-            message: "",
           });
           setLoading(false);
           setNotificationProps({
-            message: `Succes ! We'll get back to you soon :-)`,
+            message: `Succes ! We'll let you know when we go live :-)`,
             open: true,
           });
         }
@@ -69,11 +64,11 @@ export default () => {
     [formValues, setFormValues]
   );
 
-  const { name, email, message, referral } = formValues;
+  const { name, email } = formValues;
 
   return (
     <Fragment>
-      <form onSubmit={handleSubmit}>
+      <form className="signup-form__form" onSubmit={handleSubmit}>
         <div id="name">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input
@@ -108,40 +103,7 @@ export default () => {
             </div>
           </div>
         </div>
-        <div id="message">
-          <div id="message">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              {/* TODO fix type after issue: https://github.com/preactjs/preact/issues/1930 */}
-              <textarea
-                onChange={(e: any) => handleInputChange(e, "message")}
-                class="mdl-textfield__input"
-                value={message}
-                type="text"
-                id="referral"
-              ></textarea>
 
-              <label class="mdl-textfield__label" for="message">
-                Message
-              </label>
-            </div>
-          </div>
-        </div>
-        <div id="referral">
-          <div id="referral">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input
-                onChange={(e) => handleInputChange(e, "referral")}
-                class="mdl-textfield__input"
-                type="text"
-                value={referral}
-                id="referral"
-              />
-              <label class="mdl-textfield__label" for="email">
-                How did you hear about us ?
-              </label>
-            </div>
-          </div>
-        </div>
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
           type="submit"
@@ -172,15 +134,6 @@ export default () => {
           </svg>
         </div>
       )}
-      <div
-        aria-live="assertive"
-        aria-atomic="true"
-        aria-relevant="text"
-        class="mdl-snackbar--active mdl-js-snackbar"
-      >
-        <div class="mdl-snackbar__text"> Hello</div>
-        <button type="button" class="mdl-snackbar__action"></button>
-      </div>
       <Notification
         onClose={() => setNotificationProps({ open: false, message: "" })}
         {...notificationProps}
