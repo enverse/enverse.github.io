@@ -64,8 +64,7 @@ const data: ReferalData = [
     },
     referral: {
       title: "Dévelopement de dérive",
-      referralText:
-        "<b>Lorem ipsum dolor sit amet</b>, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren. Ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr !",
+      referralText: "TBD",
     },
     project: {
       appLogoUrl: "/assets/image/derive-app.png",

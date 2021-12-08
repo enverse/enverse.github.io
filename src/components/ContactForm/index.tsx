@@ -72,6 +72,7 @@ export default () => {
             name: "",
             email: "",
             message: "",
+            referral: "",
           });
           setLoading(false);
           setNotificationProps({
