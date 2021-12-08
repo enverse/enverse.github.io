@@ -43,7 +43,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: "dist"
-          destination-github-username: ${{ github.actor }}
+          destination-github-username: enverse
           destination-repository-name: ${{ env.deployToRepo }}
           user-email: ${{ env.githubEmail }}
           commit-message: Deploy ORIGIN_COMMIT
