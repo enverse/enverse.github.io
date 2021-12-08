@@ -23,6 +23,12 @@
   cursor: pointer;
 }
 
+@media (max-width: 480px) {
+  .notification__container {
+    left: 10%;
+  }
+}
+
 @keyframes rollout {
   0% {
     transform: translateY(100px);

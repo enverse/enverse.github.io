@@ -30,10 +30,13 @@
 }
 
 .carousel-testimonials__referral-container {
+  display: block;
+  opacity: 1;
   width: 40%;
   font-family: "Exodus Sans";
   font-size: 1.1em;
   line-height: 1.5;
+  animation: fadeInFromNone 0.5s ease-out;
 }
 
 .carousel-testimonials__referral-container h2 {
@@ -63,11 +66,34 @@
     flex-direction: column;
   }
   .carousel-testimonials__referral-container {
-    width: 80%;
+    width: 100%;
+  }
+
+  .carousel-testimonials__referer-card {
+    width: 88%;
   }
 
   .carousel-testimonials__project-image {
     width: 80%;
     margin: 30px auto 0 auto;
+  }
+}
+
+/* FADEINT */
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
   }
 }

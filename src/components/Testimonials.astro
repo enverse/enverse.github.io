@@ -7,7 +7,7 @@ import Carrousel from "./Carrousel/index.tsx";
     <div class="testimonials__icons-content-container">
       <div class="testimonials__icons-content">
         <i class="fas fa-leaf"></i>
-        <h2>0% Carbon-efficient</h2>
+        <h2>Less Carbon intensive</h2>
         <p>We build carbon-efficient applications.</p>
       </div>
       <div class="testimonials__icons-content">
@@ -87,16 +87,46 @@ import Carrousel from "./Carrousel/index.tsx";
     font-size: 4.1em;
   }
 
-  h2 {
-  }
-
   i {
     font-size: 3em;
   }
 
   @media (max-width: 480px) {
+    h1 {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    .testimonials__icons-row {
+      padding: 54px 0;
+    }
     .testimonials__icons-content-container {
       flex-direction: column;
+    }
+
+    .testimonials__testimonials-content-subtitle {
+      width: 100%;
+      text-align: center;
+    }
+
+    .carousel-testimonials__referer-card {
+      width: 88%;
+    }
+
+    i {
+      font-size: 2em;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .testimonials__icons-content:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    .testimonials__icons-content p {
+      font-size: 1.2em;
     }
   }
 </style>

@@ -49,6 +49,34 @@ form {
   justify-content: center;
 }
 
+label.mdl-checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+label.mdl-checkbox input {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+label.mdl-checkbox span {
+  font-size: 19.2px;
+  font-family: "Exodus Sans";
+  margin-bottom: 15px;
+}
+
+.contact-form__signup-checkbox {
+  margin-bottom: 75px;
+}
+
+@media (max-width: 480px) {
+  form {
+    width: 100%;
+  }
+}
+
 /* spinner */
 
 .spinner {

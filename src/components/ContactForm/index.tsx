@@ -2,6 +2,7 @@ import { h, Fragment } from "preact";
 import { useState, useCallback } from "preact/hooks";
 
 import Notification, { Props as NotificationProps } from "../Notification";
+import { FORMSPREE_URL, MAILCHIMP_URL } from "./constants";
 
 import "./index.css";
 
@@ -10,6 +11,7 @@ type FormValues = {
   email?: string;
   message?: string;
   referral?: string;
+  shouldSignup?: boolean;
 };
 
 export default () => {
@@ -18,8 +20,11 @@ export default () => {
     email: "",
     message: "",
     referral: "",
+    shouldSignup: false,
   });
   const [loading, setLoading] = useState<boolean>(false);
+
+  console.log(formValues);
 
   const [notificationProps, setNotificationProps] =
     useState<Pick<NotificationProps, "message" | "open">>();
@@ -31,7 +36,10 @@ export default () => {
     ) => {
       //   https://github.com/preactjs/preact/issues/193
       const target = e.target as HTMLInputElement;
-      setFormValues({ ...formValues, [fieldName]: target.value });
+      setFormValues({
+        ...formValues,
+        [fieldName]: target.checked || target.value,
+      });
     },
     [, formValues, setFormValues]
   );
@@ -42,14 +50,24 @@ export default () => {
 
       setLoading(true);
       try {
-        const response = await fetch("https://formspree.io/f/xrgjzwoq", {
+        const formspreeResponse = await fetch(FORMSPREE_URL, {
           method: "POST",
           body: JSON.stringify(formValues),
           headers: {
             Accept: "application/json",
           },
         });
-        if (response) {
+
+        if (formspreeResponse) {
+          // const mailChimpResponse = await fetch(MAILCHIMP_URL, {
+          //   method: "POST",
+          //   body: JSON.stringify({
+          //     email: formValues.email,
+          //     name: formValues.name,
+          //   }),
+          // });
+
+          // if (mailChimpResponse) {
           setFormValues({
             name: "",
             email: "",
@@ -61,6 +79,7 @@ export default () => {
             open: true,
           });
         }
+        // }
       } catch (e) {
         setLoading(false);
         console.error(e);
@@ -84,7 +103,7 @@ export default () => {
               id="name"
             />
             <label class="mdl-textfield__label" for="name">
-              Nom
+              Name
             </label>
           </div>
         </div>
@@ -142,6 +161,20 @@ export default () => {
             </div>
           </div>
         </div>
+
+        {/* <div id="signup" class="contact-form__signup-checkbox">
+          <label class="mdl-checkbox mdl-js-checkbox" for="checkbox1">
+            <span class="mdl-checkbox__label">
+              Hear from us from time to time ?
+            </span>
+            <input
+              onChange={(e) => handleInputChange(e, "shouldSignup")}
+              type="checkbox"
+              id="checkbox1"
+              class="mdl-checkbox__input"
+            />
+          </label>
+        </div> */}
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
           type="submit"
@@ -172,15 +205,6 @@ export default () => {
           </svg>
         </div>
       )}
-      <div
-        aria-live="assertive"
-        aria-atomic="true"
-        aria-relevant="text"
-        class="mdl-snackbar--active mdl-js-snackbar"
-      >
-        <div class="mdl-snackbar__text"> Hello</div>
-        <button type="button" class="mdl-snackbar__action"></button>
-      </div>
       <Notification
         onClose={() => setNotificationProps({ open: false, message: "" })}
         {...notificationProps}

@@ -1,13 +1,7 @@
----
-import SignupForm from "./SignupForm/index.tsx";
----
-
 <section id="blog" class="blog__background">
   <div class="blog__content-container">
     <h1>Green Dev Mag</h1>
     <p>Coming soon ...</p>
-    <p>Sign up to find out when we go live !!</p>
-    <SignupForm client:visible />
   </div>
 </section>
 
@@ -35,5 +29,20 @@ import SignupForm from "./SignupForm/index.tsx";
   h1 {
     font-family: "Exodus Sans Bold";
     font-size: 4.1em;
+  }
+
+  @media (max-width: 480px) {
+    .blog__content-container {
+      width: 80%;
+    }
+
+    h1 {
+      font-size: 2.1em;
+      margin-bottom: 35px;
+    }
+
+    p {
+      font-size: 1.3em;
+    }
   }
 </style>

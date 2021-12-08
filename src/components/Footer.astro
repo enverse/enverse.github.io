@@ -5,14 +5,18 @@ import Logo from "/assets/image/logo.png";
 <footer>
   <div class="footer__container">
     <div class="footer__social-links-row">
-      <img src={Logo} />
-      <div class="footer__social-links-block">
+      <a href="#intro">
+        <img src={Logo} />
+      </a>
+      <div class="footer__social-links-legal-block">
         <div>Mentions Légales</div>
         <div class="footer__vertical-line"></div>
-        <a href="https://google.com"><i class="fab fa-twitter"></i></a>
-        <a href="https://google.com"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://google.com"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://google.com"><i class="fab fa-instagram"></i></a>
+        <div class="footer__social-links-block">
+          <a href="https://google.com"><i class="fab fa-twitter"></i></a>
+          <a href="https://google.com"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://google.com"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://google.com"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
     </div>
     <div class="footer__copyright-row">
@@ -25,7 +29,7 @@ import Logo from "/assets/image/logo.png";
 <style>
   footer {
     background-color: black;
-    height: 184px;
+    /* height: 184px; */
     padding-top: 67px;
     color: white;
   }
@@ -64,7 +68,7 @@ import Logo from "/assets/image/logo.png";
     height: 33px;
   }
 
-  .footer__social-links-block {
+  .footer__social-links-legal-block {
     display: flex;
     justify-content: space-between;
     width: 25%;
@@ -72,21 +76,46 @@ import Logo from "/assets/image/logo.png";
     font-size: 1.2em;
   }
 
+  .footer__social-links-block {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+  }
+
   @media (max-width: 480px) {
     .footer__copyright-row {
       margin-top: 5px;
+      padding-top: 5px;
+    }
+
+    .footer__copyright-row p {
+      font-size: 0.7em;
     }
     .footer__social-links-row {
       flex-direction: column;
+      align-items: center;
     }
 
-    .footer__social-links-block {
+    .footer__social-links-legal-block {
       width: 100%;
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
+
+    .footer__social-links-legal-block div:last-child {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      margin-top: 50px;
     }
 
     img {
-      width: initial;
+      /* width: initial; */
       margin-bottom: 50px;
+    }
+
+    .footer__vertical-line {
+      display: none;
     }
   }
 </style>

@@ -1,14 +1,16 @@
 ---
-import GitlabLogo from "/assets/image/gitlab-logo.png";
-import Spotify from "/assets/image/spotify-logo.png";
+import HeretiqueLogo from "/assets/image/heretique-logo.png";
+import SociousLogo from "/assets/image/socious-logo.png";
+import UnopsLogo from "/assets/image/unops-logo.svg";
 ---
 
 <section id="intro" class="intro-background">
   <div class="intro__content">
     <h1>Eco-Conceived Software for Impact</h1>
     <div class="intro__client-logos-container">
-      <img src={GitlabLogo} />
-      <img src={Spotify} />
+      <img src={HeretiqueLogo} />
+      <img src={SociousLogo} />
+      <img src={UnopsLogo} />
     </div>
   </div>
 
@@ -39,13 +41,14 @@ import Spotify from "/assets/image/spotify-logo.png";
     text-decoration: inherit;
   }
 
-  .intro__client-logos-container {
-    display: flex;
+  .intro__client-logos-container img {
+    height: 26px;
+    width: auto;
+    margin-right: 15px;
   }
 
-  img {
-    width: 50px;
-    height: 50px;
+  .intro__client-logos-container {
+    margin-top: 25px;
   }
 
   h1 {
@@ -68,12 +71,12 @@ import Spotify from "/assets/image/spotify-logo.png";
 
   @media (max-width: 480px) {
     h1 {
-      font-size: 3.5em;
+      font-size: 3.1em;
       width: 95%;
     }
-
-    /* .intro__content {
-      justify-content: flex-start;
-    } */
+    .intro__client-logos-container img {
+      height: 20px;
+      margin-right: 5px;
+    }
   }
 </style>

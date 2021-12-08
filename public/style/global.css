@@ -79,3 +79,13 @@ section {
 .mdl-layout__drawer.is-visible a:visited {
   font-size: 2em;
 }
+
+@media (max-width: 480px) {
+  .mdl-layout__drawer-button {
+    top: 46px;
+  }
+
+  .mdl-layout__drawer-button {
+    right: 25px;
+  }
+}
