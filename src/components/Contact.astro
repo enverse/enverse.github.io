@@ -19,7 +19,7 @@ import ContactForm from "./ContactForm/index.tsx";
 
 <style>
   .contact-section-background {
-    background-image: url("/assets/image/contact-background.jpg");
+    background-image: url("/assets/image/contact-background.webp");
     padding: 100px 0px;
     color: black;
   }
@@ -70,6 +70,16 @@ import ContactForm from "./ContactForm/index.tsx";
       width: 300px;
       font-size: 1em;
       line-height: 1.2;
+    }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .contact__container {
+      justify-content: space-between;
+    }
+
+    .contact__title-container {
+      width: 45%;
     }
   }
 </style>
