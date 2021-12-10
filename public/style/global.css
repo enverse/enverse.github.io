@@ -24,6 +24,12 @@ html {
   scroll-behavior: smooth;
   font-family: "Eudoxus Sans Bold";
 }
+
+h1,
+h2 {
+  letter-spacing: 1px;
+}
+
 :root {
   --font-bold: "Exodus Sans Bold";
   --color-light: #f3f4f6;
@@ -82,7 +88,7 @@ section {
 
 @media (max-width: 480px) {
   .mdl-layout__drawer-button {
-    top: 46px;
+    top: 2px;
   }
 
   .mdl-layout__drawer-button {

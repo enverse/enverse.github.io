@@ -6,7 +6,11 @@ import UnopsLogo from "/assets/image/unops-logo.svg";
 
 <section id="intro" class="intro-background">
   <div class="intro__content">
-    <h1>Eco-Conceived Software for Impact</h1>
+    <h1>
+      Eco-Conceived Software for <span
+        class="intro-background__intro-content--underlined">Impact</span
+      >
+    </h1>
     <div class="intro__client-logos-container">
       <a href="https://www.heretique.fr/" target="_blank">
         <img src={HeretiqueLogo} />
@@ -29,10 +33,11 @@ import UnopsLogo from "/assets/image/unops-logo.svg";
 
 <style>
   .intro-background {
-    background-image: url("/assets/image/home-background.jpg");
+    background-image: url("/assets/image/home-background.webp");
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-size: cover;
   }
   .intro__content {
     width: 80%;
@@ -41,6 +46,10 @@ import UnopsLogo from "/assets/image/unops-logo.svg";
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .intro-background__intro-content--underlined {
+    border-bottom: 4px solid;
   }
   a:link,
   a:visited {
@@ -54,13 +63,13 @@ import UnopsLogo from "/assets/image/unops-logo.svg";
   }
 
   .intro__client-logos-container {
-    margin-top: 25px;
+    margin-top: 45px;
   }
 
   h1 {
-    font-size: 5.3125em;
+    font-size: 4.5em;
     margin: 0;
-    width: 619px;
+    width: 768px;
     color: white;
     font-family: "Exodus Sans Bold";
   }

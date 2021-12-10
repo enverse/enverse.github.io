@@ -19,7 +19,7 @@ const data: ReferalData = [
   {
     referrer: {
       firstName: "Charlotte",
-      lastName: "Hallvist",
+      lastName: "Hallqvist",
       position: "Director of Communications",
       company: {
         name: "UNOPS Iraq center",
@@ -27,7 +27,7 @@ const data: ReferalData = [
       },
     },
     referral: {
-      title: "CTO-as-a-service",
+      title: "Software for displaced populations in Iraq",
       referralText:
         "Enverse Labs came on board to support us with the development of our software which helps <b>displaced populations</b> in Iraq access <b>life-saving information about the humanitarian response</b>. Among other things, they conducted an <b>extensive analysis of our existing software and codebase</b> to help identify pain points and much-needed upgrades. The team was professional, responsive, and very knowledgeable and <b>we would happily work with them again.</b>",
     },
@@ -43,7 +43,7 @@ const data: ReferalData = [
       },
     },
     referral: {
-      title: "Landing page and CTO-as-a-service",
+      title: "Landing page and UX design for Socious admin",
       referralText:
         "Helped with design of landing page and offered support while communicating with the external developement team of the Socious App",
     },
