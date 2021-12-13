@@ -24,8 +24,6 @@ export default () => {
   });
   const [loading, setLoading] = useState<boolean>(false);
 
-  console.log(formValues);
-
   const [notificationProps, setNotificationProps] =
     useState<Pick<NotificationProps, "message" | "open">>();
 

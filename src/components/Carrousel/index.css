@@ -25,6 +25,10 @@
   border-radius: 50%;
 }
 
+.carousel-testimonials__referer-img-container p:first-child {
+  font-size: 1.14em;
+}
+
 .carousel-testimonials__referer-img-container img {
   border-radius: 50%;
 }
@@ -33,15 +37,31 @@
   display: block;
   opacity: 1;
   width: 40%;
-  font-family: "Exodus Sans";
+  font-family: "system";
   font-size: 1.1em;
   line-height: 1.5;
   animation: fadeInFromNone 0.5s ease-out;
 }
 
+.carousel-testimonials__referral-text-container {
+  display: flex;
+}
+
+.carousel-testimonials__referral-text-container div:last-child {
+  align-self: flex-end;
+}
+
+.carousel-testimonials__referral-text-container p {
+  padding-left: 20px;
+}
+
+.carousel-testimonials__referral-quotes-container i {
+  color: #8080808c;
+}
+
 .carousel-testimonials__referral-container h2 {
   margin-top: 0px;
-  font-family: "Exodus Sans Extra Bold";
+  font-family: "Exodus Sans Bold";
   font-size: 1.5em;
 }
 
