@@ -64,7 +64,7 @@ const data: ReferalData = [
     },
     referral: {
       title: "Dévelopement de dérive",
-      referralText: "TBD",
+      referralText: "<b>TBD</b>",
     },
     project: {
       appLogoUrl: "/assets/image/derive-app.png",
