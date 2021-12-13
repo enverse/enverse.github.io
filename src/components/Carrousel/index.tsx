@@ -44,9 +44,17 @@ export default function Carrousel() {
         </div>
         <div className="carousel-testimonials__referral-container">
           <h2>{currentReferral.title}</h2>
-          <div
-            dangerouslySetInnerHTML={{ __html: currentReferral.referralText }}
-          ></div>
+          <div class="carousel-testimonials__referral-text-container">
+            <div class="carousel-testimonials__referral-quotes-container">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p
+              dangerouslySetInnerHTML={{ __html: currentReferral.referralText }}
+            />
+            <div class="carousel-testimonials__referral-quotes-container">
+              <i class="fas fa-quote-right"></i>
+            </div>
+          </div>
         </div>
         <div className="carousel-testimonials__project-image">
           {project && (

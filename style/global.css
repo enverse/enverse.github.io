@@ -9,13 +9,6 @@
   src: url("/assets/fonts/EudoxusSans-Regular.woff2") format("woff2"),
     url("/assets/fonts/EudoxusSans-Regular.woff") format("woff");
 }
-
-@font-face {
-  font-family: "Exodus Sans Extra Bold";
-  src: url("/assets/fonts/EudoxusSans-ExtraBold.woff2") format("woff2"),
-    url("/assets/fonts/EudoxusSans-ExtraBold.woff") format("woff");
-}
-
 /* GLOBAL STYLES */
 
 html {

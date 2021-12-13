@@ -4,16 +4,18 @@
     url("/assets/fonts/EudoxusSans-Bold.woff") format("woff");
 }
 
-@font-face {
+/* @font-face {
   font-family: "Exodus Sans";
   src: url("/assets/fonts/EudoxusSans-Regular.woff2") format("woff2"),
     url("/assets/fonts/EudoxusSans-Regular.woff") format("woff");
-}
+} */
 
 @font-face {
-  font-family: "Exodus Sans Extra Bold";
-  src: url("/assets/fonts/EudoxusSans-ExtraBold.woff2") format("woff2"),
-    url("/assets/fonts/EudoxusSans-ExtraBold.woff") format("woff");
+  font-family: system;
+  font-style: normal;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
+    local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"),
+    local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
 
 /* GLOBAL STYLES */
@@ -79,6 +81,7 @@ section {
 .mdl-layout__drawer .mdl-navigation {
   justify-content: space-evenly;
   height: 40%;
+  margin-left: 20px;
 }
 
 .mdl-layout__drawer.is-visible a:link,
