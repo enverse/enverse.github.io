@@ -65,7 +65,7 @@ const data: ReferalData = [
     referral: {
       title: "Dévelopement de Dérive",
       referralText:
-        "Enverse are helping us build the next version of <b>Dérive</b>. Thanks to their skills in <b>eco-conception and project management</b>, they allow us to continue developing a <b>sober</b> and <b>relevant application</b>. Their strength of proposal, their listening, their rigor and their good mood make them ideal partners to develop our projects in confidence and in good intelligence.",
+        "Enverse are helping us build the next version of <b>Dérive</b>. Thanks to their skills in development, <b>eco-conception and project management<b>, they allow us to continue developing a lightweight and pertinent application. Their strength of proposal, their listening skills, their rigor and their good mood make them ideal partners to develop our projects in confidence and in good intelligence.",
     },
     project: {
       projectUrl: "https://derive.today",
