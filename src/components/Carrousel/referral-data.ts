@@ -10,7 +10,7 @@ type ReferalData = Array<{
     referralText: string;
   };
   project?: {
-    appLogoUrl: string;
+    appLogoUrl?: string;
     projectUrl: string;
   };
 }>;
@@ -43,9 +43,9 @@ const data: ReferalData = [
       },
     },
     referral: {
-      title: "Landing page and UX design for Socious admin",
+      title: "A new face for the leading social impact app",
       referralText:
-        "Jesse and Chris are talented professionals who really care about <b>social and environmental impact</b>. They are also fun to work with! If you are working on a social/environmental project, they will be great partners because they <b>share your mission.</b>",
+        "Enverse are talented professionals who really care about <b>social and environmental impact</b>. They are also fun to work with! If you are working on a social/environmental project, they will be great partners because they <b>share your mission.</b>",
     },
     project: {
       appLogoUrl: "/assets/image/socious-app.png",
@@ -59,15 +59,15 @@ const data: ReferalData = [
       position: "Founder & CEO",
       company: {
         name: "Hérétique",
-        logoUrl: "/assets/image/heretique-ceo_72x72.webp",
+        logoUrl: "/assets/image/heretique-ceo_optimized.jpg",
       },
     },
     referral: {
-      title: "Dévelopement de dérive",
-      referralText: "<b>TBD</b>",
+      title: "Dévelopement de Dérive",
+      referralText:
+        "Enverse are helping us build the next version of <b>Dérive</b>. Thanks to their skills in <b>eco-conception and project management</b>, they allow us to continue developing a <b>sober</b> and <b>relevant application</b>. Their strength of proposal, their listening, their rigor and their good mood make them ideal partners to develop our projects in confidence and in good intelligence.",
     },
     project: {
-      appLogoUrl: "/assets/image/derive-app.png",
       projectUrl: "https://derive.today",
     },
   },
