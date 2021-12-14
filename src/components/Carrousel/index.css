@@ -45,9 +45,6 @@
 
 .carousel-testimonials__referral-text-container {
   display: flex;
-  min-width: 586px;
-  min-height: 112px;
-  justify-content: space-between;
 }
 
 .carousel-testimonials__referral-text-container div:last-child {
