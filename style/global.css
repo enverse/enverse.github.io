@@ -5,7 +5,7 @@
 }
 
 @font-face {
-  font-family: "Exodus Sans";
+  font-family: "system";
   src: url("/assets/fonts/EudoxusSans-Regular.woff2") format("woff2"),
     url("/assets/fonts/EudoxusSans-Regular.woff") format("woff");
 }

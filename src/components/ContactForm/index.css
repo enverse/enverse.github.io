@@ -9,13 +9,13 @@ form {
 .mdl-textfield__input {
   border-bottom: 1px solid black;
   font-size: 1.5em;
-  font-family: "Exodus Sans";
+  font-family: "system";
 }
 
 .mdl-textfield__label {
   color: black;
   font-size: 1.2em;
-  font-family: "Exodus Sans";
+  font-family: "system";
 }
 
 .mdl-textfield {
@@ -63,7 +63,7 @@ label.mdl-checkbox input {
 
 label.mdl-checkbox span {
   font-size: 19.2px;
-  font-family: "Exodus Sans";
+  font-family: "system";
   margin-bottom: 15px;
 }
 
