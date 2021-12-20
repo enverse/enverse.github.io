@@ -55,7 +55,7 @@ const data: ReferalData = [
   {
     referrer: {
       firstName: "Kévin",
-      lastName: "Eghriagi",
+      lastName: "Echraghi",
       position: "Founder & CEO",
       company: {
         name: "Hérétique",
