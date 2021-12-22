@@ -9,13 +9,11 @@ form {
 .mdl-textfield__input {
   border-bottom: 1px solid black;
   font-size: 1.1rem;
-  font-family: "system";
 }
 
 .mdl-textfield__label {
   color: black;
   font-size: 1.1rem;
-  font-family: "system";
 }
 
 .mdl-textfield {
