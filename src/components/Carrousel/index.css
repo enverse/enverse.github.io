@@ -36,8 +36,7 @@
 .carousel-testimonials__referral-container {
   display: block;
   opacity: 1;
-  width: 40%;
-  font-family: "system";
+  width: 47%;
   font-size: 1.1em;
   line-height: 1.5;
   animation: fadeInFromNone 0.5s ease-out;
@@ -54,6 +53,7 @@
 .carousel-testimonials__referral-text-container p {
   padding-left: 20px;
   align-self: center;
+  font-size: 1.1rem;
 }
 
 .carousel-testimonials__referral-quotes-container i {
