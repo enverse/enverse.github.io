@@ -1,20 +1,24 @@
+---
+import BlogPosts from "./BlogPosts/index.tsx";
+---
+
 <section id="blog" class="blog__background">
   <div class="blog__content-container">
     <h1>Enverse Blog and News</h1>
-    <p>Coming soon ...</p>
+    <BlogPosts client:visible />
   </div>
 </section>
 
 <style>
   .blog__background {
-    background-color: var(--color-white);
+    background-color: var(--color-green-lightest);
     display: flex;
     align-items: center;
     color: black;
   }
   .blog__content-container {
-    width: 40%;
-    margin: auto;
+    width: 60%;
+    margin: 100px auto;
     text-align: center;
     min-height: 50vh;
     display: flex;
@@ -29,6 +33,7 @@
   h1 {
     font-family: "Exodus Sans Bold";
     font-size: 4.1em;
+    margin-bottom: 50px;
   }
 
   @media (max-width: 480px) {
