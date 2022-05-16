@@ -1,22 +1,16 @@
-import { Fragment, h } from "preact";
-import { useCallback, useEffect, useState } from "preact/hooks";
-import {
-  createClient,
-  EntryCollection,
-  RichTextContent,
-  LinkType,
-  ContentTypeLink,
-  Entry,
-} from "contentful";
-import "./index.css";
+import { useCallback, useEffect, useState } from 'preact/hooks';
+import * as Contentful from 'contentful';
+import './index.css';
+
+const { createClient } = Contentful;
 
 const { PUBLIC_CONTENTFUL_API, PUBLIC_CONTENTFUL_SPACE } = import.meta.env;
 
 type RelationType = {
   sys: {
     id: string;
-    linkType: LinkType;
-    type: "Entry" | "Asset";
+    linkType: Contentful.LinkType;
+    type: 'Entry' | 'Asset';
   };
 };
 
@@ -24,7 +18,7 @@ type Fields = {
   title: string;
   preview: string;
   subtitle: string;
-  content: RichTextContent;
+  content: Contentful.RichTextContent;
   author: RelationType;
   image: RelationType;
 };
@@ -35,7 +29,7 @@ type FieldsWithContent = Fields & {
 };
 
 export default () => {
-  const [posts, setPosts] = useState<Entry<FieldsWithContent>[]>();
+  const [posts, setPosts] = useState<Contentful.Entry<FieldsWithContent>[]>();
   const [loading, setLoading] = useState(true);
 
   /**
@@ -43,14 +37,12 @@ export default () => {
    */
   const getLinkedContent = useCallback(
     (
-      contentfulResponse: EntryCollection<Fields>,
-      fieldName: "author" | "image",
-      post: Entry<Fields>
+      contentfulResponse: Contentful.EntryCollection<Fields>,
+      fieldName: 'author' | 'image',
+      post: Contentful.Entry<Fields>
     ) => {
       const { id, type } = post.fields[fieldName].sys;
-      return contentfulResponse.includes[type]?.find(
-        ({ sys }) => sys.id === id
-      );
+      return contentfulResponse.includes[type]?.find(({ sys }) => sys.id === id);
     },
     []
   );
@@ -58,14 +50,14 @@ export default () => {
     const getAndSetPosts = async () => {
       const client = createClient({
         accessToken: PUBLIC_CONTENTFUL_API,
-        space: PUBLIC_CONTENTFUL_SPACE,
+        space: PUBLIC_CONTENTFUL_SPACE
       });
 
       try {
         const contentfulResponse = await client.getEntries<Fields>({
           limit: 3,
-          order: "-sys.createdAt",
-          content_type: "title",
+          order: '-sys.createdAt',
+          content_type: 'title'
         });
 
         const postsWithContent = contentfulResponse.items.map((item) => {
@@ -73,9 +65,9 @@ export default () => {
             ...item,
             fields: {
               ...item.fields,
-              author: getLinkedContent(contentfulResponse, "author", item),
-              image: getLinkedContent(contentfulResponse, "image", item),
-            },
+              author: getLinkedContent(contentfulResponse, 'author', item),
+              image: getLinkedContent(contentfulResponse, 'image', item)
+            }
           };
         });
 
@@ -101,11 +93,7 @@ export default () => {
         {posts.map(({ fields: { title, preview, image }, sys: { id } }) => (
           <a href={`/posts/${id}`}>
             <div className="blog-post__post-container">
-              <img
-                className="blog-post__preview-image"
-                src={image.fields.file.url}
-                alt={image.fields.description}
-              />
+              <img className="blog-post__preview-image" src={image.fields.file.url} alt={image.fields.description} />
               <h2 className="blog-post__title">{title}</h2>
               <div className="blog-post__preview-text">{preview}</div>
               <div className="blog-post__button-container">

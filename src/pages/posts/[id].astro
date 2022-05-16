@@ -1,9 +1,7 @@
 ---
-import { createClient, EntryCollection, RichTextContent, LinkType, Entry } from 'contentful';
+import * as Contentful from 'contentful';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { Document } from '@contentful/rich-text-types'
-
-
 import moment from 'moment';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro'
@@ -11,7 +9,7 @@ import Navbar from '../../components/Navbar.astro'
 type RelationType<T> = {
   sys: {
     id: string;
-    linkType: LinkType;
+    linkType: Contentful.LinkType;
     type: 'Entry' | 'Asset';
   };
   fields: T
@@ -44,9 +42,9 @@ type Fields = {
 
 export async function getStaticPaths() {
   const getLinkedContent = (
-    contentfulResponse: EntryCollection<Fields>,
+    contentfulResponse: Contentful.EntryCollection<Fields>,
     fieldName: 'author' | 'image',
-    post: Entry<Fields>
+    post: Contentful.Entry<Fields>
   ) => {
     const { id, type } = post.fields[fieldName].sys;
     return contentfulResponse.includes[type]?.find(({ sys }) => sys.id === id);
@@ -55,7 +53,7 @@ export async function getStaticPaths() {
 
   const { PUBLIC_CONTENTFUL_API, PUBLIC_CONTENTFUL_SPACE } = import.meta.env;
 
-  const client = createClient({
+  const client = Contentful.createClient({
     accessToken: PUBLIC_CONTENTFUL_API,
     space: PUBLIC_CONTENTFUL_SPACE
   });
