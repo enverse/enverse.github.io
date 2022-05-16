@@ -1,10 +1,10 @@
-import { h, Fragment } from "preact";
-import { useState, useCallback } from "preact/hooks";
+import { h, Fragment } from 'preact';
+import { useState, useCallback } from 'preact/hooks';
 
-import Notification, { Props as NotificationProps } from "../Notification";
-import { FORMSPREE_URL, MAILCHIMP_URL } from "./constants";
+import Notification, { Props as NotificationProps } from '../Notification';
+import { FORMSPREE_URL, MAILCHIMP_URL } from './constants';
 
-import "./index.css";
+import './index.css';
 
 type FormValues = {
   name?: string;
@@ -16,27 +16,23 @@ type FormValues = {
 
 export default () => {
   const [formValues, setFormValues] = useState<FormValues>({
-    name: "",
-    email: "",
-    message: "",
-    referral: "",
-    shouldSignup: false,
+    name: '',
+    email: '',
+    message: '',
+    referral: '',
+    shouldSignup: false
   });
   const [loading, setLoading] = useState<boolean>(false);
 
-  const [notificationProps, setNotificationProps] =
-    useState<Pick<NotificationProps, "message" | "open">>();
+  const [notificationProps, setNotificationProps] = useState<Pick<NotificationProps, 'message' | 'open'>>();
 
   const handleInputChange = useCallback(
-    (
-      e: h.JSX.TargetedEvent<HTMLInputElement, Event>,
-      fieldName: keyof FormValues
-    ) => {
+    (e: h.JSX.TargetedEvent<HTMLInputElement, Event>, fieldName: keyof FormValues) => {
       //   https://github.com/preactjs/preact/issues/193
       const target = e.target as HTMLInputElement;
       setFormValues({
         ...formValues,
-        [fieldName]: target.checked || target.value,
+        [fieldName]: target.checked || target.value
       });
     },
     [, formValues, setFormValues]
@@ -49,11 +45,11 @@ export default () => {
       setLoading(true);
       try {
         const formspreeResponse = await fetch(FORMSPREE_URL, {
-          method: "POST",
+          method: 'POST',
           body: JSON.stringify(formValues),
           headers: {
-            Accept: "application/json",
-          },
+            Accept: 'application/json'
+          }
         });
 
         if (formspreeResponse) {
@@ -67,15 +63,15 @@ export default () => {
 
           // if (mailChimpResponse) {
           setFormValues({
-            name: "",
-            email: "",
-            message: "",
-            referral: "",
+            name: '',
+            email: '',
+            message: '',
+            referral: ''
           });
           setLoading(false);
           setNotificationProps({
             message: `Succes ! We'll get back to you soon :-)`,
-            open: true,
+            open: true
           });
         }
         // }
@@ -95,7 +91,7 @@ export default () => {
         <div id="name">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input
-              onChange={(e) => handleInputChange(e, "name")}
+              onChange={(e) => handleInputChange(e, 'name')}
               value={name}
               class="mdl-textfield__input"
               type="text"
@@ -111,7 +107,7 @@ export default () => {
           <div id="email">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input
-                onChange={(e) => handleInputChange(e, "email")}
+                onChange={(e) => handleInputChange(e, 'email')}
                 value={email}
                 class="mdl-textfield__input"
                 type="email"
@@ -131,7 +127,7 @@ export default () => {
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               {/* TODO fix type after issue: https://github.com/preactjs/preact/issues/1930 */}
               <textarea
-                onChange={(e: any) => handleInputChange(e, "message")}
+                onChange={(e: any) => handleInputChange(e, 'message')}
                 class="mdl-textfield__input"
                 value={message}
                 type="text"
@@ -148,7 +144,7 @@ export default () => {
           <div id="referral">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input
-                onChange={(e) => handleInputChange(e, "referral")}
+                onChange={(e) => handleInputChange(e, 'referral')}
                 class="mdl-textfield__input"
                 type="text"
                 value={referral}
@@ -185,29 +181,12 @@ export default () => {
       </form>
       {loading && (
         <div class="contact-form__spinner-overlay">
-          <svg
-            class="spinner"
-            width="65px"
-            height="65px"
-            viewBox="0 0 66 66"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              class="path"
-              fill="none"
-              stroke-width="6"
-              stroke-linecap="round"
-              cx="33"
-              cy="33"
-              r="30"
-            ></circle>
+          <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
           </svg>
         </div>
       )}
-      <Notification
-        onClose={() => setNotificationProps({ open: false, message: "" })}
-        {...notificationProps}
-      />
+      <Notification onClose={() => setNotificationProps({ open: false, message: '' })} {...notificationProps} />
     </Fragment>
   );
 };

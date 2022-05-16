@@ -1,9 +1,9 @@
-import { Fragment, h } from "preact";
-import { useState } from "preact/hooks";
+import { Fragment, h } from 'preact';
+import { useState } from 'preact/hooks';
 
-import referralData from "./referral-data";
+import referralData from './referral-data';
 
-import "./index.css";
+import './index.css';
 
 // function renderText(index: number) {
 //   if (index )
@@ -12,8 +12,7 @@ import "./index.css";
 export default function Carrousel() {
   const [selectedCardIndex, setSelectedCardIndex] = useState<number>(0);
 
-  const { referral: currentReferral, project } =
-    referralData[selectedCardIndex];
+  const { referral: currentReferral, project } = referralData[selectedCardIndex];
 
   return (
     <Fragment>
@@ -21,9 +20,7 @@ export default function Carrousel() {
         <div className="carousel-testimonials__referers-container">
           {referralData.map(({ referrer }, index) => (
             <div
-              className={`carousel-testimonials__referer-card ${
-                selectedCardIndex === index ? "selected" : ""
-              }`}
+              className={`carousel-testimonials__referer-card ${selectedCardIndex === index ? 'selected' : ''}`}
               onClick={() => setSelectedCardIndex(index)}
             >
               <div className="carousel-testimonials__referer-img-container column">
@@ -35,13 +32,9 @@ export default function Carrousel() {
                     {referrer.firstName} {referrer.lastName}
                   </b>
                 </p>
-                <p>
-                  {referrer.position}
-                </p>
+                <p>{referrer.position}</p>
 
-                <p>
-                    {referrer.company.name}
-                </p>
+                <p>{referrer.company.name}</p>
               </div>
             </div>
           ))}
@@ -52,9 +45,7 @@ export default function Carrousel() {
             <div class="carousel-testimonials__referral-quotes-container">
               <i class="fas fa-quote-left"></i>
             </div>
-            <p
-              dangerouslySetInnerHTML={{ __html: currentReferral.referralText }}
-            />
+            <p dangerouslySetInnerHTML={{ __html: currentReferral.referralText }} />
             <div class="carousel-testimonials__referral-quotes-container">
               <i class="fas fa-quote-right"></i>
             </div>
