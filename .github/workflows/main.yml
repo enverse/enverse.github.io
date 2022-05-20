@@ -42,6 +42,7 @@ jobs:
         run: |
           touch .env
           echo 'PUBLIC_CONTENTFUL_API=${{ secrets.PUBLIC_CONTENTFUL_API }}\nPUBLIC_CONTENTFUL_SPACE=${{ secrets.PUBLIC_CONTENTFUL_SPACE }}' >> .env
+          cat .env
 
       # Build the project and add .nojekyll file to supress default behaviour
       - name: Build
