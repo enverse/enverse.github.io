@@ -1,1 +1,0 @@
-import{v as r,S as o}from"./vendor.7d98092f.js";const e=({value:t})=>t?r("astro-fragment",{dangerouslySetInnerHTML:{__html:t}}):null;e.shouldComponentUpdate=()=>!1;var m=e,d=t=>(n,a,l)=>o(r(n,a,r(m,{value:l})),t);export{d as default};
