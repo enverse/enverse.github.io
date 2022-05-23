@@ -79,7 +79,7 @@
   width: 16%;
 }
 .carousel-testimonials__project-image img {
-  width: 100%;
+  width: 220px;
 }
 
 @media (max-width: 480px) {
@@ -87,7 +87,7 @@
     flex-direction: column;
   }
   .carousel-testimonials__referral-container {
-    width: 100%;
+    width: 220px;
   }
 
   .carousel-testimonials__referer-card {
