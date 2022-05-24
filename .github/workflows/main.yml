@@ -49,7 +49,7 @@ jobs:
       # Build the project and add .nojekyll file to supress default behaviour
       - name: Build
         run: |
-          pnpm build
+          pnpm build --experimental-integrations
           touch ./dist/.nojekyll
           echo https://www.enverselabs.com > ./dist/CNAME
 

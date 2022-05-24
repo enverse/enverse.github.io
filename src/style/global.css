@@ -2,6 +2,7 @@
   font-family: "Exodus Sans Bold";
   src: url("/static/assets/fonts/EudoxusSans-Bold.woff2") format("woff2"),
     url("/static/assets/fonts/EudoxusSans-Bold.woff") format("woff");
+  font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
     local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"),
     local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+  font-display: swap;
 }
 
 /* GLOBAL STYLES */
@@ -90,5 +92,6 @@ section {
 
   .mdl-layout__drawer-button {
     right: 25px;
+    color: white
   }
 }

@@ -87,7 +87,7 @@
     flex-direction: column;
   }
   .carousel-testimonials__referral-container {
-    width: 220px;
+    width: 100%;
   }
 
   .carousel-testimonials__referer-card {

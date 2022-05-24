@@ -24,7 +24,7 @@ export default function Carrousel() {
               onClick={() => setSelectedCardIndex(index)}
             >
               <div className="carousel-testimonials__referer-img-container column">
-                <img src={referrer.company.logoUrl} />
+                <img width="72" height="72" alt={referrer.company.name} src={referrer.company.logoUrl} />
               </div>
               <div className="column">
                 <p>
@@ -54,7 +54,7 @@ export default function Carrousel() {
         <div className="carousel-testimonials__project-image">
           {project && (
             <a href={project.projectUrl} target="_blank">
-              <img src={project.appLogoUrl} />
+              <img alt={project.projectUrl} width="220" height="393" src={project.appLogoUrl} />
             </a>
           )}
         </div>

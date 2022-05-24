@@ -81,7 +81,7 @@ export default () => {
   return (
     <Fragment>
       <form onSubmit={handleSubmit}>
-        <div id="name">
+        <div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input
               onChange={(e) => handleInputChange(e, 'name')}
@@ -96,7 +96,7 @@ export default () => {
           </div>
         </div>
 
-        <div id="contact">
+        <div>
           <div id="email">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input
@@ -115,8 +115,8 @@ export default () => {
             </div>
           </div>
         </div>
-        <div id="message">
-          <div id="message">
+        <div>
+          <div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               {/* TODO fix type after issue: https://github.com/preactjs/preact/issues/1930 */}
               <textarea
@@ -133,8 +133,8 @@ export default () => {
             </div>
           </div>
         </div>
-        <div id="referral">
-          <div id="referral">
+        <div>
+          <div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input
                 onChange={(e) => handleInputChange(e, 'referral')}
@@ -150,19 +150,6 @@ export default () => {
           </div>
         </div>
 
-        {/* <div id="signup" class="contact-form__signup-checkbox">
-          <label class="mdl-checkbox mdl-js-checkbox" for="checkbox1">
-            <span class="mdl-checkbox__label">
-              Hear from us from time to time ?
-            </span>
-            <input
-              onChange={(e) => handleInputChange(e, "shouldSignup")}
-              type="checkbox"
-              id="checkbox1"
-              class="mdl-checkbox__input"
-            />
-          </label>
-        </div> */}
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
           type="submit"
