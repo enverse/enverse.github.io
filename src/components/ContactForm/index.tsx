@@ -2,7 +2,6 @@ import { h, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
 
 import Notification, { Props as NotificationProps } from '../Notification';
-import { FORMSPREE_URL, MAILCHIMP_URL } from './constants';
 
 import './index.css';
 
@@ -13,6 +12,9 @@ type FormValues = {
   referral?: string;
   shouldSignup?: boolean;
 };
+
+const { PUBLIC_FORMSPREE_KEY } = import.meta.env;
+const FORMSPREE_URL = 'https://formspree.io/f';
 
 export default () => {
   const [formValues, setFormValues] = useState<FormValues>({
@@ -44,7 +46,7 @@ export default () => {
 
       setLoading(true);
       try {
-        const formspreeResponse = await fetch(FORMSPREE_URL, {
+        const formspreeResponse = await fetch(`${FORMSPREE_URL}/${PUBLIC_FORMSPREE_KEY}`, {
           method: 'POST',
           body: JSON.stringify(formValues),
           headers: {
@@ -53,15 +55,6 @@ export default () => {
         });
 
         if (formspreeResponse) {
-          // const mailChimpResponse = await fetch(MAILCHIMP_URL, {
-          //   method: "POST",
-          //   body: JSON.stringify({
-          //     email: formValues.email,
-          //     name: formValues.name,
-          //   }),
-          // });
-
-          // if (mailChimpResponse) {
           setFormValues({
             name: '',
             email: '',

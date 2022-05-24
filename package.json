@@ -1,6 +1,6 @@
 {
   "name": "enverse-landing",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -11,7 +11,8 @@
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@contentful/rich-text-types": "^15.12.1",
-    "astro": "^1.0.0-beta.12"
+    "astro": "^1.0.0-beta.12",
+    "astro-compress": "^0.0.6"
   },
   "dependencies": {
     "@astrojs/preact": "^0.1.1",

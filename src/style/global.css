@@ -1,22 +1,31 @@
 @font-face {
   font-family: "Exodus Sans Bold";
-  src: url("/assets/fonts/EudoxusSans-Bold.woff2") format("woff2"),
-    url("/assets/fonts/EudoxusSans-Bold.woff") format("woff");
+  src: url("/static/assets/fonts/EudoxusSans-Bold.woff2") format("woff2"),
+    url("/static/assets/fonts/EudoxusSans-Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: "system";
-  src: url("/assets/fonts/EudoxusSans-Regular.woff2") format("woff2"),
-    url("/assets/fonts/EudoxusSans-Regular.woff") format("woff");
+  font-family: system;
+  font-style: normal;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
+    local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"),
+    local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
+
 /* GLOBAL STYLES */
 
 html {
   font-size: 16px;
   color: #fff;
   scroll-behavior: smooth;
-  font-family: "Exodus Sans Bold";
+  font-family: "Eudoxus Sans Bold";
 }
+
+h1,
+h2 {
+  letter-spacing: 1px;
+}
+
 :root {
   --font-bold: "Exodus Sans Bold";
   --color-light: #f3f4f6;
@@ -33,10 +42,6 @@ html {
   :root {
     --color-light: #1f2937;
   }
-}
-
-a {
-  text-decoration: none;
 }
 
 .row {
@@ -70,6 +75,7 @@ section {
 .mdl-layout__drawer .mdl-navigation {
   justify-content: space-evenly;
   height: 40%;
+  margin-left: 20px;
 }
 
 .mdl-layout__drawer.is-visible a:link,
@@ -79,7 +85,7 @@ section {
 
 @media (max-width: 480px) {
   .mdl-layout__drawer-button {
-    top: 46px;
+    top: 2px;
   }
 
   .mdl-layout__drawer-button {

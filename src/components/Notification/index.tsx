@@ -1,7 +1,4 @@
-import { h, Fragment } from "preact";
-import { useState, useCallback } from "preact/hooks";
-
-import "./index.css";
+import './index.css';
 
 export type Props = {
   message: string;
