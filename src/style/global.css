@@ -23,9 +23,14 @@ html {
   font-family: "Eudoxus Sans Bold";
 }
 
+div, p {
+    /* font-family: "Eudoxus Sans Bold"; */
+}
+
 h1,
 h2 {
   letter-spacing: 1px;
+  font-family: var(--font-bold);
 }
 
 :root {

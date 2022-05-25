@@ -20,6 +20,7 @@ type Fields = {
   subtitle: Document;
   content: Document;
   author: RelationType<{ name: string, role: string }>;
+  slug: string;
   image: RelationType<{
     title: string,
     description: string,
@@ -69,14 +70,14 @@ export async function getStaticPaths() {
         ...item.fields,
         author: getLinkedContent(contentfulResponse, 'author', item),
         image: getLinkedContent(contentfulResponse, 'image', item),
-        createdAt: moment(item.sys.createdAt).format('lll')
+        createdAt: moment(item.sys.createdAt).format('ll')
       }
     };
   });
 
   return postsWithContent.map((post) => {
     return {
-      params: { id: post.sys.id },
+      params: { id: post.fields.slug },
       props: { post: post.fields }
     };
   });
@@ -92,15 +93,27 @@ const rawHtmlPostContent = documentToHtmlString(post.content)
 ---
 <BaseLayout backgroundColor="#52b788">
   <div class="blog-post-page__container">
-    <img
-      class="blog-post-page__image"
-      src={post.image.fields.file.url}
-      alt={post.image.fields.description}
-    />
-    <div>{post.title}</div>
-    <div> {post.subtitle}</div>
-    <div>{post.createdAt}</div>
-    <div>By: {post.author.fields.name}, {post.author.fields.role}</div>
+    <div class="blog-post-page__header-container">
+      <div>
+        <div>{post.author.fields.name}, {post.author.fields.role}</div>  
+        <div>{post.createdAt}</div>
+      </div>
+      <div>
+        <icon class="fas fa-link"/>
+      </div>  
+    </div>
+    <div class="blog-post-page__image-container">
+      <img
+        height="467"
+        width="700"
+        class="blog-post-page__image"
+        src={post.image.fields.file.url}
+        alt={post.image.fields.description}
+      />
+      <div><i>{post.image.fields.description}</i></div>
+    </div>
+    <h1>{post.title}</h1>
+    <h2> {post.subtitle}</h2>
     <div set:html={rawHtmlPostContent}>{post.content.content}</div>
   </div>
 
@@ -109,18 +122,35 @@ const rawHtmlPostContent = documentToHtmlString(post.content)
 <style>
   .blog-post-page__container {
     color: black;
-    width: 80%;
+    width: 700px;
     margin: 0 auto;
     padding-top: 84px;
+  }
+
+  .blog-post-page__header-container {
+    margin-top: 56px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
   }
 
   blockquote::before {
     content: ""
   }
 
+  i {
+    color: var(--color-gray);
+  }
+
   @media (max-width: 480px) {
      .blog-post-page__container {
        padding-top: 64px;
+       width: 90%;
+     }
+
+     .blog-post-page__image {
+       width: 200px;
+       height: auto;
      }
   }
 
