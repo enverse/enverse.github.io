@@ -35,3 +35,14 @@
 a {
   text-decoration: none;
 }
+
+@media (max-width: 480px) {
+  .blog-post__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-post__container > a {
+    margin-bottom: 20px;
+  }
+}

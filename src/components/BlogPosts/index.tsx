@@ -87,7 +87,6 @@ export default () => {
     return <div>loading ... </div>;
   }
   if (posts) {
-    console.log(posts);
     return (
       <div className="blog-post__container">
         {posts.map(({ fields: { title, preview, image }, sys: { id } }) => (

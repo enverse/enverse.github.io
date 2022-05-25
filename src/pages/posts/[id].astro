@@ -4,7 +4,6 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { Document } from '@contentful/rich-text-types'
 import moment from 'moment';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Navbar from '../../components/Navbar.astro'
 
 type RelationType<T> = {
   sys: {
@@ -91,8 +90,7 @@ const { post }: { post?: Fields } = Astro.props;
 const rawHtmlPostContent = documentToHtmlString(post.content)
 
 ---
-<BaseLayout>
-  <Navbar />
+<BaseLayout backgroundColor="#52b788">
   <div class="blog-post-page__container">
     <img
       class="blog-post-page__image"
@@ -113,11 +111,17 @@ const rawHtmlPostContent = documentToHtmlString(post.content)
     color: black;
     width: 80%;
     margin: 0 auto;
+    padding-top: 84px;
   }
 
   blockquote::before {
     content: ""
   }
 
-  p {}
+  @media (max-width: 480px) {
+     .blog-post-page__container {
+       padding-top: 64px;
+     }
+  }
+
 </style>
