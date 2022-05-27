@@ -18,6 +18,26 @@ type ReferalData = Array<{
 const data: ReferalData = [
   {
     referrer: {
+      firstName: 'Kévin',
+      lastName: 'Echraghi',
+      position: 'Founder & CEO',
+      company: {
+        name: 'Hérétique',
+        logoUrl: '/static/assets/image/heretique-ceo_optimized.jpg'
+      }
+    },
+    referral: {
+      title: 'A light and power app for Dérive',
+      referralText:
+        'Enverse are helping us build the next version of Dérive. Thanks to their skills in development, eco-conception and project management, they allow us to continue developing a lightweight and pertinent application. Their strength of proposal, their listening skills, their rigor and their good mood make them ideal partners to develop our projects in confidence and in good intelligence.'
+    },
+    project: {
+      appLogoUrl: '/static/assets/image/project-image-derive.webp',
+      projectUrl: 'https://baladesentimentale.fr/'
+    }
+  },
+  {
+    referrer: {
       firstName: 'Seira',
       lastName: 'Yun',
       position: 'Founder & CEO',
@@ -50,22 +70,6 @@ const data: ReferalData = [
       title: 'Software for displaced populations in Iraq',
       referralText:
         'Enverse Labs came on board to support us with the development of our software which helps displaced populations in Iraq access life-saving information about the humanitarian response. Among other things, they conducted an extensive analysis of our existing software and codebase to help identify pain points and much-needed upgrades. The team was professional, responsive, and very knowledgeable and we would happily work with them again.'
-    }
-  },
-  {
-    referrer: {
-      firstName: 'Kévin',
-      lastName: 'Echraghi',
-      position: 'Founder & CEO',
-      company: {
-        name: 'Hérétique',
-        logoUrl: '/static/assets/image/heretique-ceo_optimized.jpg'
-      }
-    },
-    referral: {
-      title: 'A light and power app for Dérive',
-      referralText:
-        'Enverse are helping us build the next version of Dérive. Thanks to their skills in development, eco-conception and project management, they allow us to continue developing a lightweight and pertinent application. Their strength of proposal, their listening skills, their rigor and their good mood make them ideal partners to develop our projects in confidence and in good intelligence.'
     }
   }
 ];

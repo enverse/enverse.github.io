@@ -142,7 +142,7 @@ const url = `https://enverselabs.com/${slug}`
         <a href={`https://twitter.com/intent/tweet?url=${url}&text=${title}`} target="blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
         <a href={`https://www.facebook.com/sharer.php?u=${url}`} target="blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
         <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`} target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-        <ShareLink client:only link={url} title={title} />
+        <ShareLink client:visible link={url} title={title} />
       </div>  
     </div>
     <div class="blog-post-page__image-container">

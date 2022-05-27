@@ -1,7 +1,7 @@
-import './index.css';
-
 import { useCallback, useState } from 'preact/hooks';
+
 import Notification, { Props as NotificationProps } from '../Notification';
+import './index.css';
 
 type Props = {
   title: string;
@@ -18,11 +18,11 @@ export default ({ link, title }: Props) => {
         open: true
       })
     );
-  }, [navigator]);
+  }, []);
 
   return (
     <>
-      <button className="share-link__share-button" onClick={copyToClipBoard}>
+      <button class="share-link__share-button" onClick={copyToClipBoard}>
         <i class="fas fa-link"></i>
       </button>
       <Notification {...notificationProps} onClose={() => setNotificationProps({ message: '', open: false })} />

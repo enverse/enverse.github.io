@@ -89,6 +89,11 @@ export default () => {
   if (loading) {
     return <div>loading ... </div>;
   }
+
+  if (posts.length === 0) {
+    return <div>Coming soom ...</div>;
+  }
+
   if (posts) {
     return (
       <div className="blog-post__container">
