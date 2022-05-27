@@ -3,7 +3,7 @@
   top: 10%;
   left: 40%;
   right: 40%;
-  
+  z-index: 100;
   color: white;
   background-color: black;
   padding: 5px 15px 5px 25px;
@@ -28,6 +28,7 @@
 @media (max-width: 480px) {
   .notification__container {
     left: 10%;
+    right: 10%;
   }
 }
 
