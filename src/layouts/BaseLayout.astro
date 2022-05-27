@@ -3,12 +3,18 @@
   import '../style/global.css';
   import '../style/home.css';
   import '../style/normalize.css';
+  import Navbar from "../components/Navbar.astro";
+  import Footer from "../components/Footer.astro";
+
   
+
   const title: string = "Enverse Labs";
+
+  const { inverted} = Astro.props
 
 ---
 
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -20,11 +26,15 @@
 
     <meta
       name="description"
-      content="Enverse Labs is a software studio that creates responsible software for impact. Enverse helps clients design, build, and ship tech products and services. As well as ship our in-house products with the same ambition: fight for a more sustainable future."
+      content="Enverse Labs is a software studio that creates responsible software for impact. We help clients design, build, and ship tech products and services. As well as ship our in-house products with the same ambition: fight for a more sustainable future."
     />
     <title>{title}</title>
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap" rel="stylesheet"> -->
 
     <link
       rel="preload"
@@ -44,10 +54,14 @@
   <body>
     <main>
       <div
-        class="demo-layout-transparent mdl-layout mdl-layout--no-desktop-drawer-button mdl-js-layout"
+        class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-js-layout mdl-layout--fixed-header"
       >
+        <Navbar inverted={inverted} />
         <slot />
+        <Footer />
       </div>
     </main>
   </body>
 </html>
+
+

@@ -79,7 +79,8 @@
   width: 16%;
 }
 .carousel-testimonials__project-image img {
-  width: 220px;
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 480px) {

@@ -1,10 +1,11 @@
 ---
 import * as Contentful from 'contentful';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { Document } from '@contentful/rich-text-types'
+import { documentToHtmlString, Options } from '@contentful/rich-text-html-renderer';
+import { Document, BLOCKS } from '@contentful/rich-text-types'
 import moment from 'moment';
+
+import ShareLink from "../../components/ShareLink"
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Navbar from '../../components/Navbar.astro'
 
 type RelationType<T> = {
   sys: {
@@ -15,13 +16,7 @@ type RelationType<T> = {
   fields: T
 };
 
-type Fields = {
-  title: string;
-  preview: string;
-  subtitle: Document;
-  content: Document;
-  author: RelationType<{ name: string, role: string }>;
-  image: RelationType<{
+type ImageAsset = {
     title: string,
     description: string,
     file: {
@@ -36,9 +31,44 @@ type Fields = {
       fileName: string,
       contentType: string
     }
-  }>;
+  }
+
+type Fields = {
+  title: string;
+  preview: string;
+  subtitle: Document;
+  content: Document;
+  author: RelationType<{ name: string, role: string, profilePicture: RelationType<ImageAsset> }>;
+  slug: string;
+  image: RelationType<ImageAsset>;
   createdAt: string;
 };
+
+const renderOptions: Options = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: (node) => `
+      <style>
+        .blog-post-page__embbeded-image-container {
+          display: flex;
+          flex-direction: column;
+        }
+        .blog-post-page__embbeded-image-container i {
+          color: #4f5d58;
+        }
+
+        @media (max-width: 480px) {
+          .blog-post-page__embbeded-image {
+            width: 100%;
+            height: auto;
+          }
+        }
+      </style>
+      <div class='blog-post-page__embbeded-image-container'>
+        <img class='blog-post-page__embbeded-image' height="467" width="700" src="${node.data.target.fields.file.url}" alt="${node.data.target.fields.description}" />
+        <i>${node.data.target.fields.description}</i>
+      </div>`
+  }
+}
 
 export async function getStaticPaths() {
   const getLinkedContent = (
@@ -70,14 +100,14 @@ export async function getStaticPaths() {
         ...item.fields,
         author: getLinkedContent(contentfulResponse, 'author', item),
         image: getLinkedContent(contentfulResponse, 'image', item),
-        createdAt: moment(item.sys.createdAt).format('lll')
+        createdAt: moment(item.sys.createdAt).format('ll')
       }
     };
   });
 
   return postsWithContent.map((post) => {
     return {
-      params: { id: post.sys.id },
+      params: { id: post.fields.slug },
       props: { post: post.fields }
     };
   });
@@ -88,21 +118,45 @@ export async function getStaticPaths() {
 
 const { post }: { post?: Fields } = Astro.props;
 
-const rawHtmlPostContent = documentToHtmlString(post.content)
+const rawHtmlPostContent = documentToHtmlString(post.content, renderOptions)
+
+const { title, slug, subtitle } = post
+const url = `https://enverselabs.com/${slug}`
 
 ---
-<BaseLayout>
-  <Navbar />
+<BaseLayout inverted>
   <div class="blog-post-page__container">
-    <img
-      class="blog-post-page__image"
-      src={post.image.fields.file.url}
-      alt={post.image.fields.description}
-    />
-    <div>{post.title}</div>
-    <div> {post.subtitle}</div>
-    <div>{post.createdAt}</div>
-    <div>By: {post.author.fields.name}, {post.author.fields.role}</div>
+    <div class="blog-post-page__header-container">
+      <div>
+        <div class="blog-post-page__author">
+          <div>
+            <img height="72" width="72" src={post.author.fields.profilePicture.fields.file.url} alt={post.author.fields.profilePicture.fields.description} />
+          </div>
+          <div class="blog-post-page__author-date-block">
+            {post.author.fields.name}, {post.author.fields.role}         
+            <div>{post.createdAt}</div>
+          </div>
+        </div>  
+      </div>
+      <div class="blog-post-page__sharing-links">
+        <a href={`https://twitter.com/intent/tweet?url=${url}&text=${title}`} target="blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+        <a href={`https://www.facebook.com/sharer.php?u=${url}`} target="blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`} target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <ShareLink client:visible link={url} title={title} />
+      </div>  
+    </div>
+    <div class="blog-post-page__image-container">
+      <img
+        height="467"
+        width="700"
+        class="blog-post-page__image"
+        src={post.image.fields.file.url}
+        alt={post.image.fields.description}
+      />
+      <div><i>{post.image.fields.description}</i></div>
+    </div>
+    <div><h1>{post.title}</h1></div>
+    <div><h2> {post.subtitle}</h2></div>
     <div set:html={rawHtmlPostContent}>{post.content.content}</div>
   </div>
 
@@ -111,13 +165,87 @@ const rawHtmlPostContent = documentToHtmlString(post.content)
 <style>
   .blog-post-page__container {
     color: black;
-    width: 80%;
+    width: 700px;
     margin: 0 auto;
+    padding-top: 84px;
   }
+
+  .blog-post-page__header-container {
+    margin-top: 56px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .blog-post-page__author {
+    display: flex;
+    /* justify-content: space-around; */
+
+  }
+
+  .blog-post-page__author img {
+    border-radius: 50%;
+    margin-right: 30px;
+  }
+
+  .blog-post-page__author-date-block {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .blog-post-page__sharing-links {
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+
+
+  .blog-post-page__sharing-links i {
+    color: var(--color-gray);
+  }
+
+  .blog-post-page__sharing-links i:hover {
+    color: var(--color-black);
+  }
+  /* .blog-post-page__container i {
+    color: var(--color-gray);
+  } */
 
   blockquote::before {
     content: ""
   }
 
-  p {}
+  i {
+    color: var(--color-gray);
+  }
+
+  @media (max-width: 480px) {
+     .blog-post-page__container {
+       padding-top: 64px;
+       width: 90%;
+     }
+
+     .blog-post-page__image {
+       width: 100%;
+       height: auto;
+     }
+
+     .blog-post-page__header-container {
+       flex-direction: column;
+       align-items: flex-start;
+     }
+
+     .blog-post-page__author {
+       margin-bottom: 30px;
+     }
+
+     .blog-post-page__author-date-block {
+       justify-content: center;
+     }
+
+
+  }
+
 </style>

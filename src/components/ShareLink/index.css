@@ -1,0 +1,16 @@
+.share-link__share-button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;    
+    
+    display: flex;
+    color: var(--color-gray);
+    cursor: pointer;
+}
+
+.share-link__share-button:hover {
+    color: var(--color-black);
+}

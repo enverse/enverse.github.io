@@ -21,6 +21,7 @@ type Fields = {
   content: Contentful.RichTextContent;
   author: RelationType;
   image: RelationType;
+  slug: string;
 };
 
 type FieldsWithContent = Fields & {
@@ -71,6 +72,8 @@ export default () => {
           };
         });
 
+        console.log(postsWithContent);
+
         setPosts(postsWithContent);
         setLoading(false);
       } catch (e) {
@@ -86,18 +89,22 @@ export default () => {
   if (loading) {
     return <div>loading ... </div>;
   }
+
+  if (posts.length === 0) {
+    return <div>Coming soon ...</div>;
+  }
+
   if (posts) {
-    console.log(posts);
     return (
       <div className="blog-post__container">
-        {posts.map(({ fields: { title, preview, image }, sys: { id } }) => (
-          <a href={`/posts/${id}`}>
+        {posts.map(({ fields: { title, preview, image, slug } }) => (
+          <a href={`/posts/${slug}`}>
             <div className="blog-post__post-container">
               <img className="blog-post__preview-image" src={image.fields.file.url} alt={image.fields.description} />
               <h2 className="blog-post__title">{title}</h2>
               <div className="blog-post__preview-text">{preview}</div>
               <div className="blog-post__button-container">
-                <a href={`/posts/${id}`}>Read article</a>
+                <a href={`/posts/${slug}`}>Read article</a>
               </div>
             </div>
           </a>

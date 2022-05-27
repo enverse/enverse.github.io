@@ -1,31 +1,44 @@
 ---
-import Logo from "/static/assets/image/logo.png";
+  import Logo from "/static/assets/image/logo-all-white.svg";
+  import LogoInverted from "/static/assets/image/logo-green-text-black.svg"
+
+
+  const links =  [
+    { to: `/#about`, title: "About" },
+    { to: `/#testimonials`, title: "Testimonials" },
+    { to: `/#blog`, title: "Blog" },
+    { to: `/#contact`, title: "Contact", highlight: true }
+  ] 
+
+  const { inverted } = Astro.props
+
+  const logo = inverted ? LogoInverted : Logo
+  
 ---
 
-<div class="navbar__desktop-menu navbar__desktop-menu--vertical-center">
-  <a href="#intro"><img alt="enverse-logo" src={Logo} width="164" height="27" /></a>
-</div>
+
 <header
-  class="navbar__desktop-menu mdl-layout__header mdl-layout__header--transparent"
+  class={`navbar__desktop-menu mdl-layout__header mdl-layout__header--transparent ${ inverted && 'navbar__desktop-menu--inverted'}`}
 >
+      <!-- Title -->
   <div class="mdl-layout__header-row">
+    <span class="mdl-layout-title"><a href='/'><img alt="enverse-logo" src={logo} width="164" height="27" /></a></span>
     <!-- Add spacer, to align navigation to the right -->
     <div class="mdl-layout-spacer"></div>
     <!-- Navigation -->
-    <nav class="mdl-navigation navbar__links-container">
-      <a href="#about">About Us</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
+    <nav class="mdl-navigation navbar__links-container mdl-layout--large-screen-only">
+      {links && links.map(({ to, title, highlight }) => <a href={to} class={ highlight && 'navbar__links-container--highlight'}>{title}</a>)}
+      <!-- <a href={links['about']}>About Us</a>
+      <a href={links['testimonials']}>Testimonials</a>
+      <a href={links['blog']}>Blog</a>
+      <a href={links['contact']}>Contact</a> -->
     </nav>
   </div>
 </header>
 <div class="mdl-layout__drawer">
+
   <nav class="mdl-navigation">
-    <a href="#about">About Us</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
+    {links && links.map(({ to, title }) => <a href={to}>{title}</a>)}
   </nav>
 </div>
 
@@ -39,6 +52,15 @@ import Logo from "/static/assets/image/logo.png";
     left: 0;
     top: 20px;
   }
+
+  .navbar__desktop-menu--inverted {
+    color: var(--color-black);
+  }
+
+  .navbar__desktop-menu--inverted .navbar__links-container--highlight {
+    border: 2px solid var(--color-green-army);
+  }
+
 
   .navbar__desktop-menu--vertical-center {
     top: 35px;
@@ -84,7 +106,7 @@ import Logo from "/static/assets/image/logo.png";
     font-family: "Exodus Sans Bold";
     font-size: 16px;
   }
-  .navbar__links-container a:last-child {
+  .navbar__links-container--highlight {
     border: 2px solid var(--color-green-lightest);
     border-radius: 5px;
     padding: 7px;

@@ -18,22 +18,22 @@ type ReferalData = Array<{
 const data: ReferalData = [
   {
     referrer: {
-      firstName: 'Seira',
-      lastName: 'Yun',
+      firstName: 'Kévin',
+      lastName: 'Echraghi',
       position: 'Founder & CEO',
       company: {
-        name: 'Socious',
-        logoUrl: '/static/assets/image/socious-ceo_72x72.webp'
+        name: 'Hérétique',
+        logoUrl: '/static/assets/image/heretique-ceo_optimized.jpg'
       }
     },
     referral: {
-      title: 'A new face for the leading social impact app',
+      title: 'A light and power app for Dérive',
       referralText:
-        'Enverse are talented professionals who really care about social and environmental impact. They are also fun to work with! If you are working on a social/environmental project, they will be great partners because they share your mission.'
+        'Enverse are helping us build the next version of Dérive. Thanks to their skills in development, eco-conception and project management, they allow us to continue developing a lightweight and pertinent application. Their strength of proposal, their listening skills, their rigor and their good mood make them ideal partners to develop our projects in confidence and in good intelligence.'
     },
     project: {
-      appLogoUrl: '/static/assets/image/socious-app_221x393.png',
-      projectUrl: 'https://socious.io/'
+      appLogoUrl: '/static/assets/image/project-image-derive.webp',
+      projectUrl: 'https://baladesentimentale.fr/'
     }
   },
   {
@@ -54,18 +54,22 @@ const data: ReferalData = [
   },
   {
     referrer: {
-      firstName: 'Kévin',
-      lastName: 'Echraghi',
+      firstName: 'Seira',
+      lastName: 'Yun',
       position: 'Founder & CEO',
       company: {
-        name: 'Hérétique',
-        logoUrl: '/static/assets/image/heretique-ceo_optimized.jpg'
+        name: 'Socious',
+        logoUrl: '/static/assets/image/socious-ceo_72x72.webp'
       }
     },
     referral: {
-      title: 'A light and power app for Dérive',
+      title: 'A new face for the leading social impact app',
       referralText:
-        'Enverse are helping us build the next version of Dérive. Thanks to their skills in development, eco-conception and project management, they allow us to continue developing a lightweight and pertinent application. Their strength of proposal, their listening skills, their rigor and their good mood make them ideal partners to develop our projects in confidence and in good intelligence.'
+        'Enverse are talented professionals who really care about social and environmental impact. They are also fun to work with! If you are working on a social/environmental project, they will be great partners because they share your mission.'
+    },
+    project: {
+      appLogoUrl: '/static/assets/image/socious-app_221x393.png',
+      projectUrl: 'https://socious.io/'
     }
   }
 ];
