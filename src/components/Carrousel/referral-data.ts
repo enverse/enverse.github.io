@@ -38,6 +38,22 @@ const data: ReferalData = [
   },
   {
     referrer: {
+      firstName: 'Charlotte',
+      lastName: 'Hallqvist',
+      position: 'Director of Communications',
+      company: {
+        name: 'UNOPS',
+        logoUrl: '/static/assets/image/unops-referral_72x72.webp'
+      }
+    },
+    referral: {
+      title: 'Software for displaced populations in Iraq',
+      referralText:
+        'Enverse Labs came on board to support us with the development of our software which helps displaced populations in Iraq access life-saving information about the humanitarian response. Among other things, they conducted an extensive analysis of our existing software and codebase to help identify pain points and much-needed upgrades. The team was professional, responsive, and very knowledgeable and we would happily work with them again.'
+    }
+  },
+  {
+    referrer: {
       firstName: 'Seira',
       lastName: 'Yun',
       position: 'Founder & CEO',
@@ -54,22 +70,6 @@ const data: ReferalData = [
     project: {
       appLogoUrl: '/static/assets/image/socious-app_221x393.png',
       projectUrl: 'https://socious.io/'
-    }
-  },
-  {
-    referrer: {
-      firstName: 'Charlotte',
-      lastName: 'Hallqvist',
-      position: 'Director of Communications',
-      company: {
-        name: 'UNOPS',
-        logoUrl: '/static/assets/image/unops-referral_72x72.webp'
-      }
-    },
-    referral: {
-      title: 'Software for displaced populations in Iraq',
-      referralText:
-        'Enverse Labs came on board to support us with the development of our software which helps displaced populations in Iraq access life-saving information about the humanitarian response. Among other things, they conducted an extensive analysis of our existing software and codebase to help identify pain points and much-needed upgrades. The team was professional, responsive, and very knowledgeable and we would happily work with them again.'
     }
   }
 ];

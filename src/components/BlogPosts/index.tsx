@@ -91,7 +91,7 @@ export default () => {
   }
 
   if (posts.length === 0) {
-    return <div>Coming soom ...</div>;
+    return <div>Coming soon ...</div>;
   }
 
   if (posts) {

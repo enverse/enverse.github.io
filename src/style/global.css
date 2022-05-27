@@ -6,31 +6,42 @@
 }
 
 @font-face {
-  font-family: system;
-  font-style: normal;
-  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
-    local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"),
-    local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+  font-family: "Inter";
+  src: url("/static/assets/fonts/InterRegular.ttf") format("truetype");
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Inter Bold";
+  src: url("/static/assets/fonts/InterBold.ttf") format("truetype");
+  font-display: swap;
+}
+
+
+
 /* GLOBAL STYLES */
 
-html {
-  font-size: 16px;
+html, body {
+  font-size: 18px;
   color: #fff;
   scroll-behavior: smooth;
-  font-family: "Eudoxus Sans Bold";
+  font-family: 'Inter';
 }
 
-div, p {
-    /* font-family: "Eudoxus Sans Bold"; */
-}
 
 h1,
 h2 {
   letter-spacing: 1px;
   font-family: var(--font-bold);
+  font-family: "Exodus Sans Bold";
+}
+
+p {
+  font-size: 18px;
+}
+
+p b {
+  font-family: "Inter Bold";
 }
 
 :root {
