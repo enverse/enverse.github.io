@@ -1,16 +1,18 @@
 .notification__container {
   position: fixed;
-  bottom: 0;
+  top: 10%;
   left: 40%;
+  right: 40%;
+  
   color: white;
   background-color: black;
-  padding: 5px;
+  padding: 5px 15px 5px 25px;
   font-family: "Exodus Sans Bold";
   font-size: 1.5em;
-  border-radius: 2px;
+  border-radius: 10px;
   display: flex;
-  align-content: center;
   align-items: center;
+  justify-content: space-between;
   animation: 0.4s rollout;
 }
 
@@ -31,9 +33,9 @@
 
 @keyframes rollout {
   0% {
-    transform: translateY(100px);
+    top: -10%
   }
   100% {
-    transform: translateY(0);
+    top: 10%
   }
 }

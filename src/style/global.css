@@ -85,6 +85,11 @@ section {
   margin-left: 20px;
 }
 
+.mdl-layout__header.navbar__desktop-menu--inverted .mdl-layout__drawer-button {
+  color: var(--color-black);
+}
+
+
 .mdl-layout__drawer.is-visible a:link,
 .mdl-layout__drawer.is-visible a:visited {
   font-size: 2em;

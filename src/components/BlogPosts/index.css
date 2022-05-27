@@ -25,11 +25,13 @@
 }
 
 .blog-post__button-container {
-  border: 0.1115rem var(--color-green-army) solid;
+  border: 2px var(--color-green-army) solid;
   border-radius: 8px;
   width: fit-content;
   padding: 5px;
   cursor: pointer;
+  color: var(--color-green-army);
+  font-family: 'Exodus Sans Bold';
 }
 
 a {

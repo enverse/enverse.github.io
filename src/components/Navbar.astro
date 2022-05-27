@@ -1,5 +1,6 @@
 ---
-  import Logo from "/static/assets/image/logo.png";
+  import Logo from "/static/assets/image/logo-all-white.svg";
+  import LogoInverted from "/static/assets/image/logo-green-text-black.svg"
 
 
   const links =  [
@@ -8,16 +9,20 @@
     { to: `/#blog`, title: "Blog" },
     { to: `/#contact`, title: "Contact", highlight: true }
   ] 
+
+  const { inverted } = Astro.props
+
+  const logo = inverted ? LogoInverted : Logo
   
 ---
 
 
 <header
-  class="navbar__desktop-menu mdl-layout__header mdl-layout__header--transparent"
+  class={`navbar__desktop-menu mdl-layout__header mdl-layout__header--transparent ${ inverted && 'navbar__desktop-menu--inverted'}`}
 >
       <!-- Title -->
   <div class="mdl-layout__header-row">
-    <span class="mdl-layout-title"><a href='/'><img alt="enverse-logo" src={Logo} width="164" height="27" /></a></span>
+    <span class="mdl-layout-title"><a href='/'><img alt="enverse-logo" src={logo} width="164" height="27" /></a></span>
     <!-- Add spacer, to align navigation to the right -->
     <div class="mdl-layout-spacer"></div>
     <!-- Navigation -->
@@ -47,6 +52,15 @@
     left: 0;
     top: 20px;
   }
+
+  .navbar__desktop-menu--inverted {
+    color: var(--color-black);
+  }
+
+  .navbar__desktop-menu--inverted .navbar__links-container--highlight {
+    border: 2px solid var(--color-green-army);
+  }
+
 
   .navbar__desktop-menu--vertical-center {
     top: 35px;

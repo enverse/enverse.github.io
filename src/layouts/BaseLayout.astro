@@ -10,7 +10,7 @@
 
   const title: string = "Enverse Labs";
 
-  const { backgroundColor} = Astro.props
+  const { inverted} = Astro.props
 
 ---
 
@@ -47,12 +47,12 @@
     <script async defer src="https://code.getmdl.io/1.3.0/material.min.js"
     ></script>
   </head>
-  <body style={backgroundColor ? `background: ${backgroundColor}` : ''}>
+  <body>
     <main>
       <div
         class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-js-layout mdl-layout--fixed-header"
       >
-        <Navbar />
+        <Navbar inverted={inverted} />
         <slot />
         <Footer />
       </div>
