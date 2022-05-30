@@ -32,9 +32,11 @@ export default function Carrousel() {
                     {referrer.firstName} {referrer.lastName}
                   </b>
                 </p>
-                <p>{referrer.position}</p>
+                <p className="carousel-testimonials__referer-card-refferer-position--small-text">{referrer.position}</p>
 
-                <p>{referrer.company.name}</p>
+                <p className="carousel-testimonials__referer-card-refferer-position--small-text">
+                  {referrer.company.name}
+                </p>
               </div>
             </div>
           ))}

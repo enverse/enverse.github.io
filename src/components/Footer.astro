@@ -9,7 +9,7 @@ import Logo from "/static/assets/image/logo-green-white-text.svg";
         <img alt="navbar-enverse-logo" width="147" height="24" src={Logo} />
       </a>
       <div class="footer__social-links-legal-block">
-        <div>Mentions Légales</div>
+        <div class="footer__social-links-legal-block--small-text">Mentions Légales</div>
         <div class="footer__vertical-line"></div>
         <div class="footer__social-links-block">
           <a href="https://github.com/enverse"><i class="fab fa-github"></i></a>
@@ -72,9 +72,17 @@ import Logo from "/static/assets/image/logo-green-white-text.svg";
   .footer__social-links-legal-block {
     display: flex;
     justify-content: space-between;
-    width: 25%;
     align-items: center;
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
+  }
+
+  .footer__social-links-legal-block a {
+    margin-left: 15px
+  }
+
+  .footer__social-links-legal-block--small-text {
+    font-size: 0.8em;
+    margin-right: 15px;
   }
 
   .footer__social-links-block {

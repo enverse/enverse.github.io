@@ -150,12 +150,7 @@ export default () => {
           </div>
         </div>
 
-        <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-          type="submit"
-          name="submit"
-          disabled={loading}
-        >
+        <button class="contact-form__submit-button" type="submit" name="submit" disabled={loading}>
           Submit
         </button>
       </form>
