@@ -8,9 +8,8 @@
 
   
 
-  const title: string = "Enverse Labs";
 
-  const { inverted} = Astro.props
+  const { inverted, title =  "Enverse Labs" } = Astro.props
 
 ---
 
@@ -32,10 +31,6 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap" rel="stylesheet"> -->
-
     <link
       rel="preload"
       as="style"
@@ -43,7 +38,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp&display=swap"
       rel="stylesheet"
     />
 

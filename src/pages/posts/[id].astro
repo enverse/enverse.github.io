@@ -120,11 +120,11 @@ const { post }: { post?: Fields } = Astro.props;
 
 const rawHtmlPostContent = documentToHtmlString(post.content, renderOptions)
 
-const { title, slug, subtitle } = post
+const { title, slug } = post
 const url = `https://enverselabs.com/${slug}`
 
 ---
-<BaseLayout inverted>
+<BaseLayout inverted title={`Enverse Labs | ${title}`}>
   <div class="blog-post-page__container">
     <div class="blog-post-page__header-container">
       <div>

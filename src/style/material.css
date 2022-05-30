@@ -7650,11 +7650,7 @@ input.mdl-button[type="submit"] {
   height: 64px;
   margin: 0;
   padding: 0 40px 0 80px; }
-  .mdl-layout--no-drawer-button .mdl-layout__header-row {
-    padding-left: 40px; }
-  @media screen and (min-width: 1025px) {
-    .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
-      padding-left: 40px; } }
+
   @media screen and (max-width: 1024px) {
     .mdl-layout__header-row {
       height: 56px;
