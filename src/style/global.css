@@ -1,43 +1,41 @@
 @font-face {
-  font-family: "Exodus Sans Bold";
-  src: url("/static/assets/fonts/EudoxusSans-Bold.woff2") format("woff2"),
-    url("/static/assets/fonts/EudoxusSans-Bold.woff") format("woff");
+  font-family: 'Exodus Sans Bold';
+  src: url('/static/assets/fonts/EudoxusSans-Bold.woff2') format('woff2'),
+    url('/static/assets/fonts/EudoxusSans-Bold.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("/static/assets/fonts/InterRegular.ttf") format("truetype");
+  font-family: 'Inter';
+  src: url('/static/assets/fonts/InterRegular.ttf') format('truetype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Inter Bold";
-  src: url("/static/assets/fonts/InterBold.ttf") format("truetype");
+  font-family: 'Inter Bold';
+  src: url('/static/assets/fonts/InterBold.ttf') format('truetype');
   font-display: swap;
 }
-
-
 
 /* GLOBAL STYLES */
 
-html, body {
+html,
+body {
   font-size: 18px;
   color: #fff;
   scroll-behavior: smooth;
   font-family: 'Inter';
 }
 
-
 h1,
 h2 {
   letter-spacing: 1px;
   font-family: var(--font-bold);
-  font-family: "Exodus Sans Bold";
+  font-family: 'Exodus Sans Bold';
 }
 
 h1 {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 p {
@@ -45,11 +43,11 @@ p {
 }
 
 p b {
-  font-family: "Inter Bold";
+  font-family: 'Inter Bold';
 }
 
 :root {
-  --font-bold: "Exodus Sans Bold";
+  --font-bold: 'Exodus Sans Bold';
   --color-light: #f3f4f6;
   --color-green-lightest: #fafffb;
   --color-green-mint: #d8f3dc;
@@ -104,7 +102,6 @@ section {
   color: var(--color-black);
 }
 
-
 .mdl-layout__drawer.is-visible a:link,
 .mdl-layout__drawer.is-visible a:visited {
   font-size: 2em;
@@ -116,10 +113,10 @@ section {
   }
 
   .mdl-layout__drawer-button {
-    color: white
+    color: white;
   }
 
   h1 {
     font-size: 2em;
-}
+  }
 }

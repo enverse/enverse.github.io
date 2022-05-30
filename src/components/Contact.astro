@@ -1,5 +1,5 @@
 ---
-import ContactForm from "./ContactForm/index.tsx";
+import ContactForm from "./ContactForm";
 ---
 
 <section id="contact" class="contact-section-background">
@@ -12,6 +12,8 @@ import ContactForm from "./ContactForm/index.tsx";
           where you're located. We can't wait to hear from you.
         </p>
       </div>
+
+
       <ContactForm client:visible />
     </div>
   </div>
@@ -23,6 +25,7 @@ import ContactForm from "./ContactForm/index.tsx";
     padding: 100px 0px;
     color: black;
   }
+
   .contact__content {
     width: 80%;
     margin: auto;
