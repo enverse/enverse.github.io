@@ -36,8 +36,12 @@ h2 {
   font-family: "Exodus Sans Bold";
 }
 
+h1 {
+    font-size: 3em;
+}
+
 p {
-  font-size: 18px;
+  font-size: 1em;
 }
 
 p b {
@@ -114,4 +118,8 @@ section {
   .mdl-layout__drawer-button {
     color: white
   }
+
+  h1 {
+    font-size: 2em;
+}
 }

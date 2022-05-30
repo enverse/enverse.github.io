@@ -28,10 +28,15 @@
   border: 2px var(--color-green-army) solid;
   border-radius: 8px;
   width: fit-content;
-  padding: 5px;
+  padding: 12px;
   cursor: pointer;
   color: var(--color-green-army);
   font-family: 'Exodus Sans Bold';
+}
+
+.blog-post__button-container:hover {
+  background-color: var(--color-green-army);
+  color: white;
 }
 
 a {
