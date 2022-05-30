@@ -1,62 +1,51 @@
 ---
-  import '../style/material.css'
-  import '../style/global.css';
-  import '../style/home.css';
-  import '../style/normalize.css';
-  import Navbar from "../components/Navbar.astro";
-  import Footer from "../components/Footer.astro";
-
-  
+import '../style/material.css'
+import '../style/global.css';
+import '../style/home.css';
+import '../style/normalize.css';
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 
-  const { inverted, title =  "Enverse Labs" } = Astro.props
+
+
+const { inverted, title = "Enverse Labs", description } = Astro.props;
+
+const metaDescription = description ?? "Enverse Labs is a software studio that creates responsible software for impact. We help clients design, build, and ship tech products and services. As well as ship our in-house products with the same ambition: fight for a more sustainable future."
 
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"
-    />
-    <meta property="og:image" content="/static/assets/image/logo-social.png" />
-    <meta name="google-site-verification" content="S6jygjWBpgSeAKVKV9hRpEe_YeOrDDTwTk7JIKJMBRk" />
 
-    <meta
-      name="description"
-      content="Enverse Labs is a software studio that creates responsible software for impact. We help clients design, build, and ship tech products and services. As well as ship our in-house products with the same ambition: fight for a more sustainable future."
-    />
-    <title>{title}</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0" />
+  <meta property="og:image" content="/static/assets/image/logo-social.png" />
+  <meta name="google-site-verification" content="S6jygjWBpgSeAKVKV9hRpEe_YeOrDDTwTk7JIKJMBRk" />
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="description" content={metaDescription} />
+  <title>{title}</title>
 
-    <link
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp&display=swap"
+    rel="stylesheet" />
 
 
-    <script async defer src="https://code.getmdl.io/1.3.0/material.min.js"
-    ></script>
-  </head>
-  <body>
-    <main>
-      <div
-        class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-js-layout mdl-layout--fixed-header"
-      >
-        <Navbar inverted={inverted} />
-        <slot />
-        <Footer />
-      </div>
-    </main>
-  </body>
+  <script async defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+
+<body>
+  <main>
+    <div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-js-layout mdl-layout--fixed-header">
+      <Navbar inverted={inverted} />
+      <slot />
+      <Footer />
+    </div>
+  </main>
+</body>
+
 </html>
-
-

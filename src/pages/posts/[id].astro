@@ -17,21 +17,21 @@ type RelationType<T> = {
 };
 
 type ImageAsset = {
-    title: string,
-    description: string,
-    file: {
-      url: string,
-      details: {
-        size: number,
-        image: {
-          width: number,
-          height: number
-        }
-      },
-      fileName: string,
-      contentType: string
-    }
+  title: string,
+  description: string,
+  file: {
+    url: string,
+    details: {
+      size: number,
+      image: {
+        width: number,
+        height: number
+      }
+    },
+    fileName: string,
+    contentType: string
   }
+}
 
 type Fields = {
   title: string;
@@ -120,43 +120,47 @@ const { post }: { post?: Fields } = Astro.props;
 
 const rawHtmlPostContent = documentToHtmlString(post.content, renderOptions)
 
-const { title, slug } = post
+const { title, slug, subtitle } = post
 const url = `https://enverselabs.com/${slug}`
 
 ---
-<BaseLayout inverted title={`Enverse Labs | ${title}`}>
+
+<BaseLayout inverted title={`Enverse Labs | ${title}`} description={subtitle}>
   <div class="blog-post-page__container">
     <div class="blog-post-page__header-container">
       <div>
         <div class="blog-post-page__author">
           <div>
-            <img height="72" width="72" src={post.author.fields.profilePicture.fields.file.url} alt={post.author.fields.profilePicture.fields.description} />
+            <img height="72" width="72" src={post.author.fields.profilePicture.fields.file.url}
+              alt={post.author.fields.profilePicture.fields.description} />
           </div>
           <div class="blog-post-page__author-date-block">
-            {post.author.fields.name}, {post.author.fields.role}         
+            {post.author.fields.name}, {post.author.fields.role}
             <div>{post.createdAt}</div>
           </div>
-        </div>  
+        </div>
       </div>
       <div class="blog-post-page__sharing-links">
-        <a href={`https://twitter.com/intent/tweet?url=${url}&text=${title}`} target="blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-        <a href={`https://www.facebook.com/sharer.php?u=${url}`} target="blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`} target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <a href={`https://twitter.com/intent/tweet?url=${url}&text=${title}`} target="blank"
+          rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+        <a href={`https://www.facebook.com/sharer.php?u=${url}`} target="blank" rel="noopener noreferrer"><i
+            class="fab fa-facebook-f"></i></a>
+        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`} target="blank"
+          rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
         <ShareLink client:visible link={url} title={title} />
-      </div>  
+      </div>
     </div>
     <div class="blog-post-page__image-container">
-      <img
-        height="467"
-        width="700"
-        class="blog-post-page__image"
-        src={post.image.fields.file.url}
-        alt={post.image.fields.description}
-      />
+      <img height="467" width="700" class="blog-post-page__image" src={post.image.fields.file.url}
+        alt={post.image.fields.description} />
       <div><i>{post.image.fields.description}</i></div>
     </div>
-    <div><h1>{post.title}</h1></div>
-    <div><h2> {post.subtitle}</h2></div>
+    <div>
+      <h1>{post.title}</h1>
+    </div>
+    <div>
+      <h2> {post.subtitle}</h2>
+    </div>
     <div set:html={rawHtmlPostContent}>{post.content.content}</div>
   </div>
 
@@ -209,6 +213,7 @@ const url = `https://enverselabs.com/${slug}`
   .blog-post-page__sharing-links i:hover {
     color: var(--color-black);
   }
+
   /* .blog-post-page__container i {
     color: var(--color-gray);
   } */
@@ -222,30 +227,29 @@ const url = `https://enverselabs.com/${slug}`
   }
 
   @media (max-width: 480px) {
-     .blog-post-page__container {
-       padding-top: 64px;
-       width: 90%;
-     }
+    .blog-post-page__container {
+      padding-top: 64px;
+      width: 90%;
+    }
 
-     .blog-post-page__image {
-       width: 100%;
-       height: auto;
-     }
+    .blog-post-page__image {
+      width: 100%;
+      height: auto;
+    }
 
-     .blog-post-page__header-container {
-       flex-direction: column;
-       align-items: flex-start;
-     }
+    .blog-post-page__header-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-     .blog-post-page__author {
-       margin-bottom: 30px;
-     }
+    .blog-post-page__author {
+      margin-bottom: 30px;
+    }
 
-     .blog-post-page__author-date-block {
-       justify-content: center;
-     }
+    .blog-post-page__author-date-block {
+      justify-content: center;
+    }
 
 
   }
-
 </style>
