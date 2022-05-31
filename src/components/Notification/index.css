@@ -21,9 +21,13 @@
   font-size: 0.7em;
 }
 
-.notification__container span {
+.notification__container i {
   color: #ff4081;
   cursor: pointer;
+}
+
+.notification__container i:hover {
+  color: white;
 }
 
 @media (max-width: 480px) {

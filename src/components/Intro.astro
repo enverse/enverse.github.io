@@ -7,9 +7,7 @@ import UnopsLogo from "/static/assets/image/unops-logo.svg";
 <section id="intro" class="intro-background">
   <div class="intro__content">
     <h1>
-      Eco-Conceived Software for <span
-        class="intro-background__intro-content--underlined">Impact</span
-      >
+      Eco-Conceived Software for <span class="intro-background__intro-content--underlined">Impact</span>
     </h1>
     <div class="intro__client-logos-container">
       <a href="https://www.heretique.fr/" target="_blank">
@@ -26,8 +24,8 @@ import UnopsLogo from "/static/assets/image/unops-logo.svg";
 
   <a href="#about" class="intro__scroll-icons-container">
     scroll
-    <span class="material-icons-outlined"> mouse </span>
-    <span class="material-icons-outlined"> south </span>
+    <i class="icon-mouse"></i>
+    <i class="icon-south" />
   </a>
 </section>
 
@@ -39,6 +37,7 @@ import UnopsLogo from "/static/assets/image/unops-logo.svg";
     flex-direction: column;
     background-size: cover;
   }
+
   .intro__content {
     width: 80%;
     margin: auto;
@@ -51,6 +50,7 @@ import UnopsLogo from "/static/assets/image/unops-logo.svg";
   .intro-background__intro-content--underlined {
     border-bottom: 4px solid;
   }
+
   a:link,
   a:visited {
     text-decoration: inherit;
@@ -83,6 +83,11 @@ import UnopsLogo from "/static/assets/image/unops-logo.svg";
     justify-content: flex-end;
     width: 80%;
     color: white;
+    font-size: 1.2em
+  }
+
+  .intro__scroll-icons-container i:first-child {
+    margin-left: 5px;
   }
 
   @media (max-width: 480px) {
@@ -90,6 +95,7 @@ import UnopsLogo from "/static/assets/image/unops-logo.svg";
       font-size: 3.1em;
       width: 95%;
     }
+
     .intro__client-logos-container img {
       height: 20px;
       margin-right: 5px;

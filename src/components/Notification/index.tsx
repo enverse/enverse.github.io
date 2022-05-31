@@ -12,9 +12,7 @@ export default ({ message, onClose, open }: Props) => {
     return (
       <div class="notification__container">
         <p>{message}</p>
-        <span onClick={onClose} class="material-icons-outlined">
-          close
-        </span>
+        <i onClick={onClose} class="icon-close" />
       </div>
     );
   }

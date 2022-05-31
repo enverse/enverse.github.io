@@ -72,8 +72,6 @@ export default () => {
           };
         });
 
-        console.log(postsWithContent);
-
         setPosts(postsWithContent);
         setLoading(false);
       } catch (e) {

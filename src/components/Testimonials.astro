@@ -1,22 +1,22 @@
 ---
-import Carrousel from "./Carrousel/index.tsx";
+import Carrousel from "./Carrousel";
 ---
 
 <section id="testimonials">
   <div class="testimonials__icons-row">
     <div class="testimonials__icons-content-container">
       <div class="testimonials__icons-content">
-        <i class="fas fa-leaf"></i>
+        <i class="icon-leaf-solid"></i>
         <h2>For the Planet</h2>
         <p>We build carbon-efficient applications.</p>
       </div>
       <div class="testimonials__icons-content">
-        <i class="fas fa-layer-group"></i>
+        <i class="icon-layer-group-solid"></i>
         <h2>Modern & Minimalistic</h2>
         <p>UX and Design is at the heart of our product</p>
       </div>
       <div class="testimonials__icons-content">
-        <i class="fas fa-rocket"></i>
+        <i class="icon-leaf-solid"></i>
         <h2>Powerful</h2>
         <p>Lightning fast, and powerful apps</p>
       </div>
@@ -27,9 +27,7 @@ import Carrousel from "./Carrousel/index.tsx";
       <h1>What They Say</h1>
       <div class="testimonials__testimonials-content-subtitle">
         Here's what our clients have to say <br> about our
-        <span class="testimonials__referals-subtitle--bold"
-          >proven track record</span
-        >
+        <span class="testimonials__referals-subtitle--bold">proven track record</span>
       </div>
       <Carrousel client:visible />
     </div>
@@ -49,7 +47,7 @@ import Carrousel from "./Carrousel/index.tsx";
     justify-content: space-between;
     color: white;
   }
-  
+
   .testimonials__icons-content-container p {
     font-size: 1.1rem
   }
@@ -67,6 +65,7 @@ import Carrousel from "./Carrousel/index.tsx";
     background-color: var(--color-green-mint);
     min-height: 752px;
   }
+
   .testimonials__testimonials-content {
     padding: 85px 0;
     color: black;
@@ -83,6 +82,7 @@ import Carrousel from "./Carrousel/index.tsx";
   .testimonials__referals-subtitle--bold {
     font-family: "Exodus Sans Bold";
   }
+
   h2,
   h1 {
     font-family: "Exodus Sans Bold";
@@ -105,6 +105,7 @@ import Carrousel from "./Carrousel/index.tsx";
     .testimonials__icons-row {
       padding: 54px 0;
     }
+
     .testimonials__icons-content-container {
       flex-direction: column;
     }
