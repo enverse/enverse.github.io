@@ -1,10 +1,10 @@
 ---
-import BlogPosts from "./BlogPosts/index.tsx";
+import BlogPosts from "./BlogPosts";
 ---
 
 <section id="blog" class="blog__background">
   <div class="blog__content-container">
-    <h1>Enverse Blog and News</h1>
+    <h1>Our News</h1>
     <BlogPosts client:visible />
   </div>
 </section>
@@ -16,6 +16,7 @@ import BlogPosts from "./BlogPosts/index.tsx";
     align-items: center;
     color: black;
   }
+
   .blog__content-container {
     width: 60%;
     margin: 100px auto;
@@ -25,6 +26,7 @@ import BlogPosts from "./BlogPosts/index.tsx";
     flex-direction: column;
     justify-content: center;
   }
+
   p {
     /* font-size: 2em; */
     margin-top: 15px;

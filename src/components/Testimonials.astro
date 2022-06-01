@@ -6,19 +6,25 @@ import Carrousel from "./Carrousel";
   <div class="testimonials__icons-row">
     <div class="testimonials__icons-content-container">
       <div class="testimonials__icons-content">
-        <i class="icon-leaf-solid"></i>
-        <h2>For the Planet</h2>
-        <p>We build carbon-efficient applications.</p>
+        <i class="icon-rocket-solid"></i>
+        <h2>Product Expertise</h2>
+        <p>Our team of product leaders dig deep to identify the fundamental and minimize the clutter. Our product
+          workflow
+          guarantees nothing but added value.</p>
       </div>
       <div class="testimonials__icons-content">
         <i class="icon-layer-group-solid"></i>
-        <h2>Modern & Minimalistic</h2>
-        <p>UX and Design is at the heart of our product</p>
+        <h2>Methodology</h2>
+        <p>We know that to deliver at the highest standard, the process is key. Our fully transparent methodology has
+          been fine-tuned to assure our clients choose their level of interaction with our internal tools. We offer a
+          flexible and agile process that guarantees a continuous flow of value delivery.</p>
       </div>
       <div class="testimonials__icons-content">
         <i class="icon-leaf-solid"></i>
         <h2>Powerful</h2>
-        <p>Lightning fast, and powerful apps</p>
+        <p>Our environmentally aware development principles result in more performant apps. We rely on a software
+          architecture that allows us to reduce the payload sent over the wire, minimize the amount of work the browser
+          has to do and limit the number of calls made to servers.</p>
       </div>
     </div>
   </div>
@@ -49,12 +55,14 @@ import Carrousel from "./Carrousel";
   }
 
   .testimonials__icons-content-container p {
-    font-size: 1.1rem
+    font-size: 1.1rem;
+    line-height: 1.5;
   }
 
   .testimonials__icons-content {
     display: flex;
     flex-direction: column;
+    width: 30%;
   }
 
   .carousel-testimonials__referral-text-container p {
@@ -131,8 +139,12 @@ import Carrousel from "./Carrousel";
       margin-bottom: 40px;
     }
 
+    .testimonials__icons-content {
+      width: 100%;
+    }
+
     .testimonials__icons-content p {
-      font-size: 1.2em;
+      font-size: 1.2rem;
     }
   }
 </style>
