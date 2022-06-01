@@ -5,7 +5,7 @@ import '../style/home.css';
 import '../style/normalize.css';
 import '../style/icons.css';
 
-import Navbar from "../components/Navbar.astro";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer.astro";
 
 
@@ -37,7 +37,7 @@ const metaDescription = description ?? "Enverse Labs is a software studio that c
 <body>
   <main>
     <div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-js-layout mdl-layout--fixed-header">
-      <Navbar inverted={inverted} />
+      <Navbar client:visible inverted={inverted} />
       <slot />
       <Footer />
     </div>

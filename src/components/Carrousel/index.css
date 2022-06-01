@@ -33,8 +33,6 @@
   font-size: 1.14em;
 } */
 
-
-
 .carousel-testimonials__referral-container {
   display: block;
   opacity: 1;
@@ -59,7 +57,7 @@
 .carousel-testimonials__referral-text-container p {
   padding-left: 20px;
   align-self: center;
-  font-size: 1.1rem;
+  /* font-size: 1.1rem; */
 }
 
 .carousel-testimonials__referral-quotes-container i {
@@ -68,7 +66,7 @@
 
 .carousel-testimonials__referral-container h2 {
   margin-top: 0px;
-  font-family: "Exodus Sans Bold";
+  font-family: 'Exodus Sans Bold';
   font-size: 1.5em;
 }
 
