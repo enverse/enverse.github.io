@@ -1,4 +1,7 @@
 .navbar__desktop-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
   background-color: transparent;
   width: 80%;
@@ -6,10 +9,15 @@
   right: 0;
   left: 0;
   top: 20px;
+  height: 64px;
 }
 
 .navbar__desktop-menu--inverted {
   color: var(--color-black);
+}
+
+.navbar__text-links-block a {
+  margin-left: 100px;
 }
 
 .navbar__desktop-menu--inverted .navbar__links-container--highlight {

@@ -18,36 +18,6 @@ form {
   color: white;
 }
 
-.mdl-textfield {
-  width: 100%;
-}
-
-.mdl-textfield__input {
-  border-bottom: 1px solid black;
-  font-size: 1.1rem;
-}
-
-.mdl-textfield__label {
-  color: black;
-  font-size: 1.1rem;
-}
-
-.mdl-textfield {
-  margin: 10px 0;
-}
-
-.mdl-textfield--floating-label.is-focused .mdl-textfield__label,
-.mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
-.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
-  font-size: 1.1rem;
-  color: var(--color-green-army);
-  font-family: 'Exodus Sans Bold';
-}
-
-.mdl-textfield__label:after {
-  background-color: var(--color-green-army);
-}
-
 .contact-form__spinner-overlay {
   position: fixed;
   background: black;
@@ -61,28 +31,6 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-label.mdl-checkbox {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 15px;
-}
-
-label.mdl-checkbox input {
-  margin-right: 15px;
-  margin-bottom: 15px;
-}
-
-label.mdl-checkbox span {
-  font-size: 19.2px;
-  font-family: 'system';
-  margin-bottom: 15px;
-}
-
-.contact-form__signup-checkbox {
-  margin-bottom: 75px;
 }
 
 @media (max-width: 480px) {
