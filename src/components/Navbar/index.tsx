@@ -32,15 +32,16 @@ export default ({
   const textLinksRefs = useRef(initialLinks.map(() => createRef<HTMLAnchorElement>()));
 
   useEffect(() => {
-    const textLinksDimensions = textLinksRefs.current.map((textLink) =>
+    const calculatedTextLinkDimensions = textLinksRefs.current.map((textLink) =>
       textLink.current ? textLink.current.getBoundingClientRect().width + 100 : 0
     );
 
-    saveTextLinkDimensions(textLinksDimensions);
+    saveTextLinkDimensions(calculatedTextLinkDimensions);
   }, []);
 
   const updateDimensions = useCallback(() => {
     let textLinksWidth = 0;
+    /* STORE HIDDEN INDEXES */
     const hiddenItems: number[] = [];
     const fixedMenuItems = hiddenItems.length > 0 ? BURGER_MENU_WIDTH + LOGO_WIDTH : LOGO_WIDTH;
     const offsetWidth = navbarRef.current.offsetWidth;
