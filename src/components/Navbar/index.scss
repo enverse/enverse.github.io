@@ -74,7 +74,13 @@ a:visited {
   padding: 7px;
 }
 
-@media (max-width: 480px) {
+/** MOOBILE MENU **/
+.navbar__side-menu-icon {
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+@media (max-width: 600px) {
   .navbar__desktop-menu--vertical-center {
     top: 20px;
   }

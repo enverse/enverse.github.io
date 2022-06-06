@@ -1,34 +1,77 @@
-import { Fragment, h } from 'preact';
+import { createRef, Fragment, h } from 'preact';
 import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
 
+import { Link } from './types/common';
+
 import './index.scss';
+import SideMenu from './components/SideMenu';
 
 type Props = {
   inverted?: boolean;
-  links?: Array<{ to: string; title: string; highlight?: boolean }>;
+  links?: Link[];
 };
 
-export default ({ inverted, links }: Props) => {
-  const finalLinks = links ?? [
+const BURGER_MENU_WIDTH = 200;
+const LOGO_WIDTH = 250;
+
+export default ({
+  inverted,
+  links: initialLinks = [
     { to: `/#about`, title: 'About' },
     { to: `/#testimonials`, title: 'Testimonials' },
     { to: `/#blog`, title: 'Blog' },
     { to: `/#contact`, title: 'Contact', highlight: true }
-  ];
+  ]
+}: Props) => {
+  const [textLinkDimensions, saveTextLinkDimensions] = useState([]);
+  const [hiddenItems, setHiddenItems] = useState<number[]>([]);
+  const [sideMenuOpen, setSideMenu] = useState(false);
 
-  const textLinksBlockRef = useRef<HTMLElement>();
   const navbarRef = useRef<HTMLDivElement>();
 
-  const handleWindowResize = useCallback(() => {
-    console.log('width of text blocks', textLinksBlockRef.current.getBoundingClientRect().width);
-    console.log('width of nvbar', navbarRef?.current?.getBoundingClientRect().width);
-  }, [navbarRef, textLinksBlockRef]);
+  const textLinksRefs = useRef(initialLinks.map(() => createRef<HTMLAnchorElement>()));
 
   useEffect(() => {
-    window.addEventListener('resize', handleWindowResize);
+    const textLinksDimensions = textLinksRefs.current.map((textLink) =>
+      textLink.current ? textLink.current.getBoundingClientRect().width + 100 : 0
+    );
 
-    return () => window.removeEventListener('resize', handleWindowResize);
+    saveTextLinkDimensions(textLinksDimensions);
   }, []);
+
+  const updateDimensions = useCallback(() => {
+    let textLinksWidth = 0;
+    const hiddenItems: number[] = [];
+    const fixedMenuItems = hiddenItems.length > 0 ? BURGER_MENU_WIDTH + LOGO_WIDTH : LOGO_WIDTH;
+    const offsetWidth = navbarRef.current.offsetWidth;
+
+    textLinkDimensions.forEach((textLinkWidth, index) => {
+      textLinksWidth += textLinkWidth;
+      if (textLinksWidth + fixedMenuItems > offsetWidth) {
+        hiddenItems.push(index);
+      }
+    });
+    setHiddenItems(hiddenItems);
+  }, [textLinkDimensions]);
+
+  useEffect(() => {
+    window.addEventListener('resize', updateDimensions);
+    updateDimensions();
+
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, [updateDimensions]);
+
+  const desktopLinks: Link[] = [];
+  const mobileLinks: Link[] = [];
+  initialLinks.forEach((link, index) => {
+    if (hiddenItems.indexOf(index) === -1) {
+      desktopLinks.push(link);
+    } else {
+      mobileLinks.push(link);
+    }
+  });
+
+  console.log(sideMenuOpen);
 
   return (
     <Fragment>
@@ -47,21 +90,26 @@ export default ({ inverted, links }: Props) => {
         </span>
         {/* <!-- Add spacer, to align navigation to the right --> */}
         {/* <!-- Navigation --> */}
-        <nav ref={(el) => (textLinksBlockRef.current = el)} class="navbar__text-links-block">
-          {finalLinks.map(({ to, title, highlight }) => (
-            <a href={to} class={highlight && 'navbar__links-container--highlight'}>
+        <nav class="navbar__text-links-block">
+          {desktopLinks.map(({ to, title, highlight }, idx) => (
+            <a ref={textLinksRefs.current[idx]} href={to} class={highlight && 'navbar__links-container--highlight'}>
               {title}
             </a>
           ))}
         </nav>
+        {hiddenItems.length > 0 && !sideMenuOpen && (
+          <div class="navbar__side-menu-icon">
+            <i
+              onClick={() => {
+                setSideMenu(true);
+              }}
+              class={sideMenuOpen ? 'icon-close' : 'icon-menu'}
+            />
+          </div>
+        )}
       </header>
-      {/* <div class="">
-        <nav class="">
-          {finalLinks.map(({ to, title }) => (
-            <a href={to}>{title}</a>
-          ))}
-        </nav>
-      </div> */}
+
+      <SideMenu isOpen={sideMenuOpen} links={mobileLinks} onChange={(isOpen) => setSideMenu(isOpen)} />
     </Fragment>
   );
 };

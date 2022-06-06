@@ -1,5 +1,5 @@
 ---
-import ContactForm from "./ContactForm";
+import ContactForm from "../ContactForm";
 ---
 
 <section id="contact" class="contact-section-background">
@@ -52,10 +52,14 @@ import ContactForm from "./ContactForm";
     /* font-size: 1.1rem; */
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     form {
       width: 82%;
       margin: auto;
+    }
+
+    .contact__title-container {
+      width: 100%;
     }
 
     .contact__container {
@@ -65,12 +69,12 @@ import ContactForm from "./ContactForm";
 
     h1 {
       font-size: 2.2em;
-      width: 300px;
+      width: 100%;
       margin-bottom: 15px;
     }
 
     .contact__title-container p {
-      width: 300px;
+      width: 100%;
       font-size: 1em;
       line-height: 1.2;
     }

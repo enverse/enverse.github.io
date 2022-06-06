@@ -2,7 +2,7 @@ import { h, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
 
 import Notification, { Props as NotificationProps } from '../Notification';
-import TextField from '../TextField';
+import TextField from './components/TextField';
 
 import './index.scss';
 

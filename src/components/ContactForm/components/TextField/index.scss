@@ -10,7 +10,7 @@ $animation-duration: 0.2s;
 .form-field {
   display: block;
   margin-bottom: 16px;
-
+  padding: 20px 0;
   &--is-active {
     .form-field__control {
       &::after {

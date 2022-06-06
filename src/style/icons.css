@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('/static/assets/fonts/icons/icomoon.eot?5lj99');
-  src: url('/static/assets/fonts/icons/icomoon.eot?5lj99#iefix') format('embedded-opentype'),
-    url('/static/assets/fonts/icons/icomoon.ttf?5lj99') format('truetype'),
-    url('/static/assets/fonts/icons/icomoon.woff?5lj99') format('woff'),
-    url('/static/assets/fonts/icons/icomoon.svg?5lj99#icomoon') format('svg');
+  src: url('/static/assets/fonts/icons/icomoon.eot?w66iik');
+  src: url('/static/assets/fonts/icons/icomoon.eot?w66iik#iefix') format('embedded-opentype'),
+    url('/static/assets/fonts/icons/icomoon.ttf?w66iik') format('truetype'),
+    url('/static/assets/fonts/icons/icomoon.woff?w66iik') format('woff'),
+    url('/static/assets/fonts/icons/icomoon.svg?w66iik#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,7 +12,7 @@
 
 [class^='icon-'],
 [class*=' icon-'] {
-  /* use !important to prevent issues with browser extensions that change fonts */
+  /* use !important to prevent issues with browser extensions that change /static/assets/fonts/icons */
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
@@ -58,4 +58,7 @@
 }
 .icon-leaf-solid:before {
   content: '\e906';
+}
+.icon-menu:before {
+  content: '\e907';
 }
