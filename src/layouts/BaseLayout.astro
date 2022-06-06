@@ -33,7 +33,7 @@ const metaDescription = description ?? "Enverse Labs is a software studio that c
 
 <body>
   <main>
-    <Navbar client:only inverted={inverted} />
+    <Navbar client:visible inverted={inverted} />
     <slot />
     <Footer />
   </main>

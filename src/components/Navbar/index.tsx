@@ -72,8 +72,6 @@ export default ({
     }
   });
 
-  console.log(sideMenuOpen);
-
   return (
     <Fragment>
       <header ref={navbarRef} class={`navbar__desktop-menu ${inverted ? 'navbar__desktop-menu--inverted' : ''}`}>
