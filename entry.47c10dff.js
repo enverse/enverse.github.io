@@ -1,1 +1,0 @@
-import{v as n,S as o}from"./chunks/chunk.1f13d160.js";const r=({value:a})=>a?n("astro-fragment",{dangerouslySetInnerHTML:{__html:a}}):null;r.shouldComponentUpdate=()=>!1;var m=a=>(e,l,t)=>o(n(e,l,null!=t?n(r,{value:t}):t),a);export{m as default};

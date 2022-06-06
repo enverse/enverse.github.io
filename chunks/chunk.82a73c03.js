@@ -1,1 +1,0 @@
-import{e as i}from"./chunk.4837d539.js";var e=({message:e,onClose:n,open:o})=>o?i("div",{class:"notification__container",children:[i("p",{children:e}),i("i",{onClick:n,class:"icon-close"})]}):null;export{e as N};
