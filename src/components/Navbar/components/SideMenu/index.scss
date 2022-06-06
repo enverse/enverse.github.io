@@ -1,0 +1,42 @@
+.navbar__side-menu-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: var(--color-green);
+  padding: 20px;
+  width: 50%;
+  > div {
+    padding: 20px;
+    cursor: pointer;
+
+    a {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.navbar__side-menu-background {
+  position: fixed;
+  position: fixed;
+  width: calc(50% - 40px);
+  bottom: 0;
+  top: 0;
+  right: 0;
+  backdrop-filter: blur(2px);
+  background-color: rgba(51, 51, 51, 0.27);
+}
+
+.navbar__side-manu-icon-container {
+  font-size: 1.5rem;
+  position: fixed;
+  background-color: transparent;
+  width: 80%;
+  margin: auto;
+  right: 0;
+  left: 0;
+  top: 20px;
+  height: 64px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}

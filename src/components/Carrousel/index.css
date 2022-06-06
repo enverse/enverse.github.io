@@ -87,7 +87,7 @@
   border-radius: 25px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .carousel-tetimonials__container-row {
     flex-direction: column;
   }

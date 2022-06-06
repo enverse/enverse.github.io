@@ -2,8 +2,9 @@ import { h, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
 
 import Notification, { Props as NotificationProps } from '../Notification';
+import TextField from './components/TextField';
 
-import './index.css';
+import './index.scss';
 
 type FormValues = {
   name?: string;
@@ -37,7 +38,7 @@ export default () => {
         [fieldName]: target.checked || target.value
       });
     },
-    [, formValues, setFormValues]
+    [formValues, setFormValues]
   );
 
   const handleSubmit = useCallback(
@@ -81,74 +82,35 @@ export default () => {
   return (
     <Fragment>
       <form onSubmit={handleSubmit}>
-        <div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input
-              onChange={(e) => handleInputChange(e, 'name')}
-              value={name}
-              class="mdl-textfield__input"
-              type="text"
-              id="name"
-            />
-            <label class="mdl-textfield__label" for="name">
-              Name
-            </label>
-          </div>
-        </div>
-
-        <div>
-          <div id="email">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input
-                onChange={(e) => handleInputChange(e, 'email')}
-                value={email}
-                class="mdl-textfield__input"
-                type="email"
-                name="email"
-                required
-                autoComplete="on"
-              />
-              <label class="mdl-textfield__label" for="email">
-                E-mail
-              </label>
-              <span class="mdl-textfield__error">Enter a valid email!</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              {/* TODO fix type after issue: https://github.com/preactjs/preact/issues/1930 */}
-              <textarea
-                onChange={(e: any) => handleInputChange(e, 'message')}
-                class="mdl-textfield__input"
-                value={message}
-                type="text"
-                id="referral"
-              ></textarea>
-
-              <label class="mdl-textfield__label" for="message">
-                Message
-              </label>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input
-                onChange={(e) => handleInputChange(e, 'referral')}
-                class="mdl-textfield__input"
-                type="text"
-                value={referral}
-                id="referral"
-              />
-              <label class="mdl-textfield__label" for="email">
-                How did you hear about us ?
-              </label>
-            </div>
-          </div>
-        </div>
+        <TextField
+          name="name"
+          value={name}
+          onChange={(val) => handleInputChange(val, 'name')}
+          type="text"
+          label="Name"
+        />
+        <TextField
+          name="email"
+          value={email}
+          onChange={(val) => handleInputChange(val, 'email')}
+          type="text"
+          label="Email"
+          required
+        />
+        <TextField
+          name="message"
+          value={message}
+          onChange={(val) => handleInputChange(val, 'message')}
+          type="textarea"
+          label="Message"
+        />
+        <TextField
+          name="referral"
+          value={referral}
+          onChange={(val) => handleInputChange(val, 'referral')}
+          type="text"
+          label="How did you hear about us ?"
+        />
 
         <button class="contact-form__submit-button" type="submit" name="submit" disabled={loading}>
           Submit
@@ -165,3 +127,67 @@ export default () => {
     </Fragment>
   );
 };
+
+{
+  /* <div class="">
+            <input onChange={(e) => handleInputChange(e, 'name')} value={name} class="" type="text" id="name" />
+            <label class="" for="name">
+              Name
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <div id="email">
+            <div class="">
+              <input
+                onChange={(e) => handleInputChange(e, 'email')}
+                value={email}
+                class=""
+                type="email"
+                name="email"
+                required
+                autoComplete="on"
+              />
+              <label class="" for="email">
+                E-mail
+              </label>
+              <span class="">Enter a valid email!</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div class="">
+              {/* TODO fix type after issue: https://github.com/preactjs/preact/issues/1930 */
+}
+//       <textarea
+//         onChange={(e: any) => handleInputChange(e, 'message')}
+//         class=""
+//         value={message}
+//         type="text"
+//         id="referral"
+//       ></textarea>
+
+//       <label class="" for="message">
+//         Message
+//       </label>
+//     </div>
+//   </div>
+// </div>
+// <div>
+//   <div>
+//     <div class="">
+//       <input
+//         onChange={(e) => handleInputChange(e, 'referral')}
+//         class=""
+//         type="text"
+//         value={referral}
+//         id="referral"
+//       />
+//       <label class="" for="email">
+//         How did you hear about us ?
+//       </label>
+//     </div>
+//   </div>
+// </div> */}

@@ -78,36 +78,7 @@ section {
   scroll-behavior: smooth;
 }
 
-/* MATERIAL OVERRIDES */
-.mdl-js-layout {
-  scroll-behavior: smooth;
-}
-.mdl-layout__drawer-button {
-  left: auto;
-  right: 0;
-  color: white;
-}
-
-.mdl-layout__drawer {
-  background-color: var(--color-green-mint);
-}
-
-.mdl-layout__drawer .mdl-navigation {
-  justify-content: space-evenly;
-  height: 40%;
-  margin-left: 20px;
-}
-
-.mdl-layout__header.navbar__desktop-menu--inverted .mdl-layout__drawer-button {
-  color: var(--color-black);
-}
-
-.mdl-layout__drawer.is-visible a:link,
-.mdl-layout__drawer.is-visible a:visited {
-  font-size: 2em;
-}
-
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .mdl-layout__drawer-button {
     top: 2px;
   }
