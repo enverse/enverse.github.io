@@ -1,0 +1,45 @@
+---
+import '../style/global.css';
+import '../style/normalize.css';
+
+
+
+
+
+const { title = "Enverse Labs", description } = Astro.props;
+
+const metaDescription = description ?? "Enverse Labs is a software studio that creates responsible software for impact. We help clients design, build, and ship tech products and services. As well as ship our in-house products with the same ambition: fight for a more sustainable future."
+
+---
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0" />
+  <meta property="og:image" content="/static/assets/image/logo-social.png" />
+  <meta name="google-site-verification" content="S6jygjWBpgSeAKVKV9hRpEe_YeOrDDTwTk7JIKJMBRk" />
+
+  <meta name="description" content={metaDescription} />
+  <title>{title}</title>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+
+</head>
+
+<body>
+  <main>
+    <slot />
+  </main>
+</body>
+
+</html>
+
+<style>
+  main {
+    width: 80%;
+    margin: auto;
+    color: black
+  }
+</style>

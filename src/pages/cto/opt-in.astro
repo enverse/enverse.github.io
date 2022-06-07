@@ -1,0 +1,43 @@
+---
+import OptinForm from "../../components/OptinForm"
+import FunnelLayout from "../../layouts/FunnelLayout.astro";
+---
+
+<FunnelLayout>
+  <div class="funnel-page__header-container">
+
+    <h1>The Fastlane to Ultimate yeehaw</h1>
+    <h2>How we really help people</h2>
+  </div>
+  <OptinForm />
+  <!-- <div class="funnel-page__footer">Link to imprint</div> -->
+</FunnelLayout>
+
+<style>
+  .funnel-page__header-container {
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h2 {
+    color: gray;
+  }
+
+  .funnel-page__footer {
+    width: 50%;
+    margin: auto;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 35px 0;
+  }
+
+  @media (max-width: 600px) {
+    .funnel-page__header-container {
+      margin-top: 50px;
+    }
+  }
+</style>

@@ -1,0 +1,20 @@
+.contact-form__submit-button {
+  border: 2px var(--color-green-army) solid;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 12px;
+  cursor: pointer;
+  color: var(--color-green-army);
+  font-family: 'Exodus Sans Bold';
+  background-color: transparent;
+
+  &--full-width {
+    @extend .contact-form__submit-button;
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: var(--color-green-army);
+    color: white;
+  }
+}
