@@ -1,0 +1,20 @@
+---
+import FunnelLayout from "../../layouts/FunnelLayout.astro";
+import ThankYouBlock from "../../components/ThankYouBlock/index.astro";
+import Button from "../../components/Button";
+
+---
+
+<FunnelLayout>
+  <ThankYouBlock title="Thank you for your request" subtitle="We'll get back to you by email as soon as possible"
+    button={{label: "Back to home" , to: "/" }} />
+
+</FunnelLayout>
+
+<style>
+  .thank-you-page__container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+</style>

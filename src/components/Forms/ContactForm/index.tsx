@@ -1,8 +1,8 @@
 import { h, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
 
-import Notification, { Props as NotificationProps } from '../Notification';
-import TextField from './components/TextField';
+import Notification, { Props as NotificationProps } from '../../Notification';
+import TextField from '../../TextField';
 
 import './index.scss';
 
@@ -30,12 +30,10 @@ export default () => {
   const [notificationProps, setNotificationProps] = useState<Pick<NotificationProps, 'message' | 'open'>>();
 
   const handleInputChange = useCallback(
-    (e: h.JSX.TargetedEvent<HTMLInputElement, Event>, fieldName: keyof FormValues) => {
-      //   https://github.com/preactjs/preact/issues/193
-      const target = e.target as HTMLInputElement;
+    (value, fieldName: keyof FormValues) => {
       setFormValues({
         ...formValues,
-        [fieldName]: target.checked || target.value
+        [fieldName]: value
       });
     },
     [formValues, setFormValues]
@@ -88,6 +86,7 @@ export default () => {
           onChange={(val) => handleInputChange(val, 'name')}
           type="text"
           label="Name"
+          autoComplete="name"
         />
         <TextField
           name="email"
@@ -96,6 +95,7 @@ export default () => {
           type="text"
           label="Email"
           required
+          autoComplete="email"
         />
         <TextField
           name="message"
@@ -127,67 +127,3 @@ export default () => {
     </Fragment>
   );
 };
-
-{
-  /* <div class="">
-            <input onChange={(e) => handleInputChange(e, 'name')} value={name} class="" type="text" id="name" />
-            <label class="" for="name">
-              Name
-            </label>
-          </div>
-        </div>
-
-        <div>
-          <div id="email">
-            <div class="">
-              <input
-                onChange={(e) => handleInputChange(e, 'email')}
-                value={email}
-                class=""
-                type="email"
-                name="email"
-                required
-                autoComplete="on"
-              />
-              <label class="" for="email">
-                E-mail
-              </label>
-              <span class="">Enter a valid email!</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div class="">
-              {/* TODO fix type after issue: https://github.com/preactjs/preact/issues/1930 */
-}
-//       <textarea
-//         onChange={(e: any) => handleInputChange(e, 'message')}
-//         class=""
-//         value={message}
-//         type="text"
-//         id="referral"
-//       ></textarea>
-
-//       <label class="" for="message">
-//         Message
-//       </label>
-//     </div>
-//   </div>
-// </div>
-// <div>
-//   <div>
-//     <div class="">
-//       <input
-//         onChange={(e) => handleInputChange(e, 'referral')}
-//         class=""
-//         type="text"
-//         value={referral}
-//         id="referral"
-//       />
-//       <label class="" for="email">
-//         How did you hear about us ?
-//       </label>
-//     </div>
-//   </div>
-// </div> */}

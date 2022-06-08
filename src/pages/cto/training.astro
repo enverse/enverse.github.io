@@ -1,0 +1,38 @@
+---
+import Button from "../../components/Button";
+import FunnelLayout from "../../layouts/FunnelLayout.astro";
+---
+
+<FunnelLayout>
+  <div class="training__container">
+
+    <h2>
+      HOW CAN YOU GET WITH IT
+    </h2>
+    <iframe
+      src="https://www.youtube.com/embed/tf88GFLtj18?autoplay=0&controls=0&showinfo=0&title=0&rel=0&wmode=transparent" />
+    <h3>Do you want to take the fast lane to [ULTIMATE RESULT]?
+      Click the link below and request your free [offer, strategy session, project plan, consultation...]</h3>
+    <Button inverted label="Learn more" name="learn" as="a" href="/cto/request" type="button" />
+  </div>
+</FunnelLayout>
+
+<style>
+  h3 {
+    font-weight: lighter;
+    width: 65%;
+    margin: 50px auto
+  }
+
+  iframe {
+    width: 1000px;
+    height: 568px;
+  }
+
+  .training__container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

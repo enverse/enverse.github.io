@@ -1,0 +1,36 @@
+---
+import FunnelLayout from "../../layouts/FunnelLayout.astro";
+import Button from "../../components/Button";
+
+export interface Props {
+  title: string;
+  subtitle: string;
+  button: {
+    label: string;
+    to: string;
+  }
+}
+
+const { title, subtitle, button: { label, to } } = Astro.props
+---
+
+<FunnelLayout>
+  <div class="thank-you-page__container">
+    <div>
+
+      <h1>{title}</h1>
+      <h2>{subtitle}</h2>
+      <Button inverted as="a" href={to} name="button" type="button" label={label} />
+    </div>
+
+  </div>
+
+</FunnelLayout>
+
+<style>
+  .thank-you-page__container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+</style>

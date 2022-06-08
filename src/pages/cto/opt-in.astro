@@ -1,5 +1,5 @@
 ---
-import OptinForm from "../../components/OptinForm"
+import OptinForm from "../../components/Forms/OptinForm"
 import FunnelLayout from "../../layouts/FunnelLayout.astro";
 ---
 
@@ -9,7 +9,7 @@ import FunnelLayout from "../../layouts/FunnelLayout.astro";
     <h1>The Fastlane to Ultimate yeehaw</h1>
     <h2>How we really help people</h2>
   </div>
-  <OptinForm />
+  <OptinForm client:visible />
   <!-- <div class="funnel-page__footer">Link to imprint</div> -->
 </FunnelLayout>
 

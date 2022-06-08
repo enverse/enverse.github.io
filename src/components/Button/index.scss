@@ -7,13 +7,14 @@
   color: var(--color-green-army);
   font-family: 'Exodus Sans Bold';
   background-color: transparent;
+  text-decoration: none;
 
   &--full-width {
-    @extend .contact-form__submit-button;
     width: 100%;
   }
 
-  &:hover {
+  &:hover,
+  &--inverted {
     background-color: var(--color-green-army);
     color: white;
   }

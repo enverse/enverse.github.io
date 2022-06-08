@@ -1,0 +1,19 @@
+---
+import FunnelLayout from "../../layouts/FunnelLayout.astro";
+import ThankYouBlock from "../../components/ThankYouBlock/index.astro";
+
+---
+
+<FunnelLayout>
+  <ThankYouBlock title="Thank you!" subtitle="We'll get back to you by email as soon as possible"
+    button={{label: "Watch your training now" , to: "/cto/training" }} />
+
+</FunnelLayout>
+
+<style>
+  .thank-you-page__container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+</style>

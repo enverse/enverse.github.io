@@ -11,5 +11,5 @@ export default defineConfig({
   // public: './public',   // A folder of static files Astro will copy to the root. Useful for favicons, images, and other files that don’t need processing.
   site: 'https://www.enverselabs.com',
   // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
-  integrations: [preact(), sitemap(), compress()]
+  integrations: [preact(), sitemap({ filter: (page) => !page.match('/cto/') }), compress()]
 });
