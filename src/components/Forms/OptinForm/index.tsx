@@ -5,7 +5,7 @@ import TextField from '../../TextField';
 
 import './index.scss';
 
-const API_URL = import.meta.env.PROD ? '' : 'http://localhost:3001/forwardContact';
+const API_URL = import.meta.env.PROD ? 'http://localhost:3001/forwardContact' : 'http://localhost:3001/forwardContact';
 
 export default () => {
   const [values, setValues] = useState({
@@ -31,11 +31,11 @@ export default () => {
 
         if (res) {
           setLoading(false);
-          window.location.href = '/cto/thank-you';
+          // window.location.href = '/cto/thank-you';
         }
       } catch (e) {
         setLoading(false);
-        window.location.href = '/cto/thank-you';
+        // window.location.href = '/cto/thank-you';
         console.error(e);
       }
     },

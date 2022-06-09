@@ -33,7 +33,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
 
@@ -44,7 +44,10 @@ jobs:
           echo PUBLIC_CONTENTFUL_API=${{ secrets.PUBLIC_CONTENTFUL_API }} >> .env
           echo '\n' >> .env
           echo PUBLIC_CONTENTFUL_SPACE=${{ secrets.PUBLIC_CONTENTFUL_SPACE }} >> .env
-          cat .env
+          echo '\n' >> .env
+          echo PUBLIC_FORMSPREE_KEY_CONTACT=${{ secrets.PUBLIC_FORMSPREE_KEY_CONTACT }} >> .env
+          echo '\n' >> .env
+          echo PUBLIC_FORMSPREE_FUNNEL_KEY=${{ secrets.PUBLIC_FORMSPREE_FUNNEL_KEY }} >> .env
 
       # Build the project and add .nojekyll file to supress default behaviour
       - name: Build
@@ -59,7 +62,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: "dist"
+          source-directory: 'dist'
           destination-github-username: enverse
           destination-repository-name: ${{ env.deployToRepo }}
           user-email: ${{ env.githubEmail }}

@@ -14,7 +14,7 @@ type FormValues = {
   shouldSignup?: boolean;
 };
 
-const { PUBLIC_FORMSPREE_KEY } = import.meta.env;
+const { PUBLIC_FORMSPREE_KEY_CONTACT } = import.meta.env;
 const FORMSPREE_URL = 'https://formspree.io/f';
 
 export default () => {
@@ -45,7 +45,7 @@ export default () => {
 
       setLoading(true);
       try {
-        const formspreeResponse = await fetch(`${FORMSPREE_URL}/${PUBLIC_FORMSPREE_KEY}`, {
+        const formspreeResponse = await fetch(`${FORMSPREE_URL}/${PUBLIC_FORMSPREE_KEY_CONTACT}`, {
           method: 'POST',
           body: JSON.stringify(formValues),
           headers: {
