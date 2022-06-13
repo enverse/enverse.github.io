@@ -5,7 +5,8 @@ import TextField from '../../TextField';
 
 import './index.scss';
 
-const API_URL = import.meta.env.PROD ? 'http://localhost:3001/forwardContact' : 'http://localhost:3001/forwardContact';
+const { PUBLIC_CONNECT_SENDINBLUE_URL } = import.meta.env;
+const FORWARD_USER_ENDPOINT = 'forwardContact';
 
 export default () => {
   const [values, setValues] = useState({
@@ -21,7 +22,7 @@ export default () => {
       e.preventDefault();
       try {
         setLoading(true);
-        const res = await fetch(API_URL, {
+        const res = await fetch(`${PUBLIC_CONNECT_SENDINBLUE_URL}/${FORWARD_USER_ENDPOINT}`, {
           method: 'POST',
           body: JSON.stringify(values),
           headers: {

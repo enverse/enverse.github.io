@@ -1,5 +1,6 @@
 import { h, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
+import Loader from '../../Loader';
 
 import Notification, { Props as NotificationProps } from '../../Notification';
 import TextField from '../../TextField';
@@ -116,13 +117,7 @@ export default () => {
           Submit
         </button>
       </form>
-      {loading && (
-        <div class="contact-form__spinner-overlay">
-          <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-          </svg>
-        </div>
-      )}
+      {loading && <Loader fullScreen />}
       <Notification onClose={() => setNotificationProps({ open: false, message: '' })} {...notificationProps} />
     </Fragment>
   );

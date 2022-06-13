@@ -3,6 +3,7 @@ interface ImportMetaEnv {
   readonly PUBLIC_CONTENTFUL_API: string;
   readonly PUBLIC_FORMSPREE_KEY_CONTACT: string;
   readonly PUBLIC_FORMSPREE_FUNNEL_KEY: string;
+  readonly PUBLIC_CONNECT_SENDINBLUE_URL: string;
   readonly PROD: boolean;
 }
 

@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import Loader from '../Loader';
 import './index.scss';
 
 type Props = {
@@ -32,7 +33,7 @@ export default ({ name, loading, type, label, fullWidth, as, href, inverted, onC
       disabled={loading}
       onClick={onClick}
     >
-      {label}
+      {loading ? <Loader /> : label}
     </Element>
   );
 };
