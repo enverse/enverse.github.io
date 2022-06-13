@@ -59,10 +59,8 @@ export default () => {
 
   const { name, email, goal, questions } = formValues;
 
-  console.log(formValues);
-
   return (
-    <form class="request__form" onSubmit={() => console.log('hello')}>
+    <form class="request__form" onSubmit={handleSubmit}>
       <TextField
         name="name"
         value={name}
@@ -98,15 +96,7 @@ export default () => {
         label="Which questions do you want to get answered today"
       />
       <div>
-        <Button
-          inverted
-          fullWidth
-          type="submit"
-          name="submit"
-          label="Watch the video NOW !"
-          loading={loading}
-          onClick={handleSubmit}
-        />
+        <Button inverted fullWidth type="submit" name="submit" label="Watch the video NOW !" loading={loading} />
       </div>
     </form>
   );

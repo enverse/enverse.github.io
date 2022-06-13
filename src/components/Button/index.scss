@@ -8,10 +8,14 @@
   font-family: 'Exodus Sans Bold';
   background-color: transparent;
   text-decoration: none;
-  height: 64px;
+  height: fit-content;
 
   &--full-width {
     width: 100%;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 
   &:hover,

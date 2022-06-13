@@ -32,11 +32,11 @@ export default () => {
 
         if (res) {
           setLoading(false);
-          // window.location.href = '/cto/thank-you';
+          window.location.href = '/cto/thank-you';
         }
       } catch (e) {
         setLoading(false);
-        // window.location.href = '/cto/thank-you';
+        window.location.href = '/cto/thank-you';
         console.error(e);
       }
     },
