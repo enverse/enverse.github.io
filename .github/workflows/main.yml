@@ -48,6 +48,8 @@ jobs:
           echo PUBLIC_FORMSPREE_KEY_CONTACT=${{ secrets.PUBLIC_FORMSPREE_KEY_CONTACT }} >> .env
           echo '\n' >> .env
           echo PUBLIC_FORMSPREE_FUNNEL_KEY=${{ secrets.PUBLIC_FORMSPREE_FUNNEL_KEY }} >> .env
+          echo '\n' >> .env
+          echo PUBLIC_CONNECT_SENDINBLUE_URL=${{ secrets.PUBLIC_CONNECT_SENDINBLUE_URL }} >> .env
 
       # Build the project and add .nojekyll file to supress default behaviour
       - name: Build
