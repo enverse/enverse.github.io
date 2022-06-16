@@ -12,6 +12,7 @@
 
 .blog-post__post-container {
   text-align: left;
+  max-width: 344px;
 }
 
 .blog-post__preview-image {
@@ -22,6 +23,7 @@
 
 .blog-post__preview-text {
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .blog-post__button-container {

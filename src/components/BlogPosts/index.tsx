@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'preact/hooks';
 import * as Contentful from 'contentful';
 import './index.css';
+import { h } from 'preact';
 
 const { createClient } = Contentful;
 
@@ -19,18 +20,18 @@ type Fields = {
   preview: string;
   subtitle: string;
   content: Contentful.RichTextContent;
-  author: RelationType;
-  image: RelationType;
+  author?: RelationType;
+  image?: RelationType;
   slug: string;
 };
 
 type FieldsWithContent = Fields & {
-  author: any;
-  image: any;
+  author?: any;
+  image?: any;
 };
 
 export default () => {
-  const [posts, setPosts] = useState<Contentful.Entry<FieldsWithContent>[]>();
+  const [posts, setPosts] = useState<Contentful.Entry<FieldsWithContent>[]>([]);
   const [loading, setLoading] = useState(true);
 
   /**
@@ -42,7 +43,7 @@ export default () => {
       fieldName: 'author' | 'image',
       post: Contentful.Entry<Fields>
     ) => {
-      const { id, type } = post.fields[fieldName].sys;
+      const { id, type } = post.fields[fieldName]?.sys;
       return contentfulResponse.includes[type]?.find(({ sys }) => sys.id === id);
     },
     []
@@ -75,6 +76,7 @@ export default () => {
         setPosts(postsWithContent);
         setLoading(false);
       } catch (e) {
+        setLoading(false);
         console.error(e);
       }
     };
