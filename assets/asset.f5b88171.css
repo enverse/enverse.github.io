@@ -1,0 +1,1 @@
+form{width:50%}.contact-form__submit-button{border:2px var(--color-green-army) solid;border-radius:8px;width:fit-content;padding:12px;cursor:pointer;color:var(--color-green-army);font-family:Exodus Sans Bold;background-color:transparent}.contact-form__submit-button:hover{background-color:var(--color-green-army);color:#fff}@media (max-width:600px){form{width:100%}}
