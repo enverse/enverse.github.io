@@ -51,6 +51,7 @@
 }
 
 .carousel-testimonials__referer-card-refferer-position--small-text {
+  margin-block-start: 0;
   font-size: 0.9em;
 }
 
@@ -87,7 +88,7 @@
   border-radius: 25px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .carousel-tetimonials__container-row {
     flex-direction: column;
   }

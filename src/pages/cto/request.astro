@@ -54,8 +54,8 @@ import RequestForm from "../../components/Forms/RequestForm"
         <div>Client statement</div>
       </div>
       <div class="request__image-testmonials">
-        <div>Client statement</div><img src="https://via.placeholder.com/350x150/e1e5e6/6d7b8b?text=Demo+Image"
-          alt="demo" />
+        <img src="https://via.placeholder.com/350x150/e1e5e6/6d7b8b?text=Demo+Image" alt="demo" />
+        <div>Client statement</div>
       </div>
     </div>
     <div class="request__feature-block-container">
@@ -101,8 +101,8 @@ import RequestForm from "../../components/Forms/RequestForm"
         <div>Client statement</div>
       </div>
       <div class="request__image-testmonials">
-        <div>Client statement</div><img src="https://via.placeholder.com/350x150/e1e5e6/6d7b8b?text=Demo+Image"
-          alt="demo" />
+        <img src="https://via.placeholder.com/350x150/e1e5e6/6d7b8b?text=Demo+Image" alt="demo" />
+        <div>Client statement</div>
       </div>
     </div>
 
@@ -179,7 +179,7 @@ import RequestForm from "../../components/Forms/RequestForm"
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   h3 {
@@ -218,12 +218,21 @@ import RequestForm from "../../components/Forms/RequestForm"
 
   .request__image-testmonials {
     margin-top: 50px;
-    display: flex;
     justify-content: space-around;
+  }
+
+  .request__image-testmonials img {
+    width: 100%;
   }
 
   .request__privacy-policy-link {
     padding: 50px 0;
     font-size: 0.8rem;
+  }
+
+  @media (max-width: 600px) {
+    iframe {
+      width: 100%;
+    }
   }
 </style>

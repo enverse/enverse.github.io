@@ -24,6 +24,10 @@ import FunnelLayout from "../../layouts/FunnelLayout.astro";
     margin: 50px auto
   }
 
+  h2 {
+    font-size: 1.5rem;
+  }
+
   iframe {
     width: 1000px;
     height: 568px;
@@ -34,5 +38,11 @@ import FunnelLayout from "../../layouts/FunnelLayout.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  @media (max-width: 600px) {
+    iframe {
+      width: 100%;
+    }
   }
 </style>

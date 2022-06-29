@@ -17,3 +17,9 @@ form {
   background-color: var(--color-green-army);
   color: white;
 }
+
+@media (max-width: 600px) {
+  form {
+    width: 100%;
+  }
+}
