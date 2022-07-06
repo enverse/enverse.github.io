@@ -1,5 +1,6 @@
 import { h, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
+import analytics from '../../../utils/analytics';
 import Loader from '../../Loader';
 
 import Notification, { Props as NotificationProps } from '../../Notification';
@@ -61,6 +62,7 @@ export default () => {
             message: '',
             referral: ''
           });
+          analytics.track('conversion', { send_to: 'AW-10892606530/7UkUCK7N68oDEML4_8ko' });
           setLoading(false);
           setNotificationProps({
             message: `Succes ! We'll get back to you soon :-)`,
