@@ -1,10 +1,13 @@
 import { createRef, Fragment, h } from 'preact';
 import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
 
+import useAnalytics from '../../utils/analytics';
+
+import SideMenu from './components/SideMenu';
+
 import { Link } from './types/common';
 
 import './index.scss';
-import SideMenu from './components/SideMenu';
 
 type Props = {
   inverted?: boolean;
@@ -23,6 +26,8 @@ export default ({
     { to: `/#contact`, title: 'Contact', highlight: true }
   ]
 }: Props) => {
+  const analytics = useAnalytics();
+
   const [textLinkDimensions, saveTextLinkDimensions] = useState([]);
   const [hiddenItems, setHiddenItems] = useState<number[]>([]);
   const [sideMenuOpen, setSideMenu] = useState(false);
@@ -38,6 +43,10 @@ export default ({
 
     saveTextLinkDimensions(calculatedTextLinkDimensions);
   }, []);
+
+  useEffect(() => {
+    analytics?.page({ title: 'home', href: 'https://enverselabs.com', path: '/' });
+  }, [analytics]);
 
   const updateDimensions = useCallback(() => {
     let textLinksWidth = 0;

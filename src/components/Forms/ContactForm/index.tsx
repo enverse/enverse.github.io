@@ -1,6 +1,6 @@
 import { h, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
-import analytics from '../../../utils/analytics';
+import useAnalytics from '../../../utils/analytics';
 import Loader from '../../Loader';
 
 import Notification, { Props as NotificationProps } from '../../Notification';
@@ -20,6 +20,7 @@ const { PUBLIC_FORMSPREE_KEY_CONTACT } = import.meta.env;
 const FORMSPREE_URL = 'https://formspree.io/f';
 
 export default () => {
+  const analytics = useAnalytics();
   const [formValues, setFormValues] = useState<FormValues>({
     name: '',
     email: '',
