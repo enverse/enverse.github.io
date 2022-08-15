@@ -63,7 +63,8 @@ export default () => {
             message: '',
             referral: ''
           });
-          analytics.track('conversion', { send_to: 'AW-10892606530/7UkUCK7N68oDEML4_8ko' });
+          
+          analytics?.track('conversion', { send_to: 'AW-10892606530/7UkUCK7N68oDEML4_8ko' });
           setLoading(false);
           setNotificationProps({
             message: `Succes ! We'll get back to you soon :-)`,

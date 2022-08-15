@@ -14,6 +14,7 @@
 .blog-post__post-container {
   text-align: left;
   max-width: 344px;
+  margin: 0 15px;
 }
 
 .blog-post__preview-image {
@@ -46,7 +47,7 @@ a {
   text-decoration: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1250px) {
   .blog-post__container {
     flex-direction: column;
     align-items: center;
